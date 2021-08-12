@@ -17,6 +17,22 @@
   padding: 1rem 0;
 }
 
+.search-bar {
+  border-radius: 5%;
+  padding: 0 1rem;
+  border: none;
+  border-bottom: 1px black solid;
+}
+
+.search-button {
+  outline: none;
+  background: transparent;
+  border: none;
+}
+
+.search-button:hover {
+  transform: scale(1.5);
+}
 .nav-logo a {
   color: black;
   text-decoration: none;

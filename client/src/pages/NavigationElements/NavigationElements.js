@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import Backdrop from "../../components/Backdrop";
 import NavigationBar from "../../components/NavigationBar";
 import SideDrawer from "../../components/SideDrawer";
@@ -21,7 +22,7 @@ const NavigationElements = () => {
   return (
     <>
       <NavigationBar drawerClickHandler={drawerToggleClickHandler} />
-      <SideDrawer show={isSideDrawer} />
+      <SideDrawer show={isSideDrawer} setShow={setIsSideDrawer} />
       {isSideDrawer && (
         <>
           <Backdrop click={backdropClickHandler} />

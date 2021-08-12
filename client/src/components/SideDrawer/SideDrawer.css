@@ -1,6 +1,6 @@
 .side-drawer {
   height: 100%;
-  background-color: pink;
+  background-color: white;
   box-shadow: 1px 0px 7px rgba(0, 0, 0.5);
   position: fixed;
   top: 0;
@@ -16,11 +16,20 @@
   transform: translateX(0);
 }
 
+.side-drawer-close {
+  position: fixed;
+  right: 0;
+  padding: 1rem;
+  border: none;
+  background: transparent;
+}
+
 .side-drawer ul {
   list-style: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-top: 4rem;
 }
 
 .side-drawer li {

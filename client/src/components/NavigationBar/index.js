@@ -16,8 +16,14 @@ const NavigationBar = (props) => {
           <div className="col-4 nav-search">
             <div className="justify-content-start">
               <div className="search-div">
-                <input className="me-2" type="text" />
-                <BiSearch />
+                <input
+                  className="me-2 search-bar"
+                  type="text"
+                  placeholder="Search..."
+                />
+                <button className="search-button" type="submit">
+                  <BiSearch />
+                </button>
               </div>
             </div>
           </div>

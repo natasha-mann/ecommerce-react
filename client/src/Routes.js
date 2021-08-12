@@ -7,7 +7,7 @@ import Basket from "./pages/Basket";
 const Routes = () => {
   return (
     <Switch>
-      <Route exact path="/home">
+      <Route exact path="/">
         <Home />
       </Route>
       <Route exact path="/product">

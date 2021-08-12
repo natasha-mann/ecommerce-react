@@ -1,5 +1,6 @@
-const { default: CardsCarousel } = require("../../components/CardsCarousel");
-const { default: ProductCard } = require("../../components/ProductCard");
+import Title from "../../components/Title";
+
+import CardsCarousel from "../../components/CardsCarousel";
 
 const Home = () => {
   const cardData = [
@@ -37,6 +38,7 @@ const Home = () => {
 
   return (
     <div className="carousel-container">
+      <Title text="WE THINK YOU'LL LOVE" />
       <CardsCarousel cardData={cardData} />
     </div>
   );
