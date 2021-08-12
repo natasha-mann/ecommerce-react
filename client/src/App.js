@@ -6,6 +6,9 @@ import {
   createHttpLink,
 } from "@apollo/client";
 
+import Routes from "./Routes";
+import NavigationElements from "./pages/NavigationElements/NavigationElements";
+
 import "./App.css";
 
 const httpLink = createHttpLink({
@@ -21,7 +24,12 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className="App"></div>
+        <div style={{ height: "100%" }}>
+          <NavigationElements />
+          <main style={{ marginTop: "10rem" }}>
+            <Routes />
+          </main>
+        </div>
       </Router>
     </ApolloProvider>
   );

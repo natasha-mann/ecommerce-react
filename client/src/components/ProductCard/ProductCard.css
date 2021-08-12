@@ -23,15 +23,19 @@
 .card-image:hover {
   cursor: pointer;
 }
+.card-link {
+  text-decoration: none;
+  color: black;
+}
 
 .card-title {
-  font-weight: 400;
+  font-weight: bold;
   font-size: 1rem;
 }
 
 .image-overlay {
   position: absolute;
-  width: 100%;
+  width: 80%;
   left: 50%;
   bottom: 0px;
   transform: translate(-50%, 0);
