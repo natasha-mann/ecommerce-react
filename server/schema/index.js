@@ -10,7 +10,7 @@ const typeDefs = gql`
     id: ID!
     type: String!
     name: String!
-    style: String!
+    style: [String!]
     color: String!
     image: String!
     price: Float!
