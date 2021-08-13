@@ -19,7 +19,6 @@ const Home = () => {
 
   if (data) {
     const cardData = data.products;
-    console.log(cardData);
 
     return (
       <>

@@ -42,7 +42,9 @@
   background-size: cover;
   position: relative;
 }
-.card-image-small {
+
+.card-image-small,
+.card-image-carousel {
   height: 12rem;
 }
 
@@ -61,7 +63,8 @@
   color: RED;
 }
 
-.card-title-small {
+.card-title-small,
+.card-title-carousel {
   font-weight: bold;
   font-size: 1rem;
 }

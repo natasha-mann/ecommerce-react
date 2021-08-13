@@ -1,0 +1,41 @@
+.product-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 3rem 6rem;
+  box-sizing: border-box;
+}
+
+.product-styles {
+  font-size: 1.2rem;
+  color: red;
+}
+
+.product-price {
+  font-size: 1.5rem;
+}
+
+.buttons-div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.cart-button {
+  width: 100%;
+  padding: 1rem 0;
+  border: none;
+  background-color: #212a2f;
+  color: white;
+  font-weight: bold;
+}
+
+.cart-button:hover {
+  background-color: white;
+  color: #212a2f;
+  border: #212a2f 3px solid;
+}

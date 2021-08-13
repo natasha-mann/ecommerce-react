@@ -1,0 +1,11 @@
+.size-button {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 0.2rem;
+}
+
+.size-button:hover,
+.size-button:active {
+  background-color: #212a2f;
+  color: white;
+}

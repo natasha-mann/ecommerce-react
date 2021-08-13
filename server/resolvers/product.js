@@ -1,6 +1,6 @@
 const { Product } = require("../models");
 
-const product = async ({ id }) => {
+const product = async (_, { id }) => {
   const product = await Product.findById(id);
   return product;
 };

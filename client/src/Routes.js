@@ -14,7 +14,7 @@ const Routes = () => {
       <Route exact path="/womens">
         <Womens />
       </Route>
-      <Route exact path="/product">
+      <Route exact path="/product/:id">
         <Product />
       </Route>
       <Route exact path="/basket">

@@ -59,13 +59,13 @@ const NavigationBar = (props) => {
         <div className="nav-items">
           <ul>
             <li>
-              <a href="/women">WOMEN</a>
+              <a href="/womens">WOMEN</a>
             </li>
             <li>
-              <a href="/men">MEN</a>
+              <a href="/mens">MEN</a>
             </li>
             <li>
-              <a href="/children">CHILDREN</a>
+              <a href="/childrens">CHILDREN</a>
             </li>
             <li>
               <a href="/trainers">TRAINERS</a>
