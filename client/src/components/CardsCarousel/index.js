@@ -45,6 +45,7 @@ const CardsCarousel = (props) => {
         image={card.image}
         message="QUICK BUY"
         size="carousel"
+        link={`/product/${card.id}`}
       />
     );
   });

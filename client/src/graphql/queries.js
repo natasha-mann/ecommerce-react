@@ -35,3 +35,21 @@ export const PRODUCT = gql`
     }
   }
 `;
+
+export const WOMENS_PRODUCTS = gql`
+  query Query($womensProductsFilters: Filter) {
+    womensProducts(filters: $womensProductsFilters) {
+      type
+      id
+      name
+      style
+      color
+      image
+      price
+      sizes {
+        stock
+        size
+      }
+    }
+  }
+`;

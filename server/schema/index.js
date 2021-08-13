@@ -17,8 +17,15 @@ const typeDefs = gql`
     sizes: [Size]
   }
 
+  input Filter {
+    type: String
+    styles: [ID]
+    color: [String]
+  }
+
   type Query {
-    products(sortBy: String, top: Int): [Product]
+    products(sortBy: String, top: Int, filters: Filter): [Product]
+    womensProducts(filters: Filter): [Product]
     product(id: ID!): Product
   }
 `;

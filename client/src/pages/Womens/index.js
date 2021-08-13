@@ -3,10 +3,10 @@ import { useQuery } from "@apollo/client";
 import "./Womens.css";
 import Title from "../../components/Title";
 import ProductCard from "../../components/ProductCard";
-import { PRODUCTS } from "../../graphql/queries";
+import { WOMENS_PRODUCTS } from "../../graphql/queries";
 
 const Womens = () => {
-  const { data, loading, error } = useQuery(PRODUCTS);
+  const { data: womensProducts, loading, error } = useQuery(WOMENS_PRODUCTS);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -16,8 +16,8 @@ const Womens = () => {
     return <div>error...</div>;
   }
 
-  if (data) {
-    const productData = data.products;
+  if (womensProducts) {
+    const productData = womensProducts.womensProducts;
 
     const cards = productData.map((product) => {
       return (
