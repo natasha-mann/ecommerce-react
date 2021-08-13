@@ -16,7 +16,8 @@ const ProductCard = (props) => {
   };
 
   return (
-    <div
+    <a
+      href={props.link}
       className={[`card-container-${props.size}`, `card-container`].join(" ")}
     >
       <div
@@ -30,12 +31,12 @@ const ProductCard = (props) => {
         <div className={`${display} image-overlay`}>{props.message}</div>
       </div>
       <div className="card-body">
-        <a className="card-link" href="/">
+        <div className="card-link" href="/">
           <h3 className={`card-title-${props.size}`}>{props.name}</h3>
-        </a>
-        {props.price && <p className="price-text">£{props.price}</p>}
+        </div>
       </div>
-    </div>
+      <div>{props.price && <p className="price-text">£{props.price}</p>}</div>
+    </a>
   );
 };
 

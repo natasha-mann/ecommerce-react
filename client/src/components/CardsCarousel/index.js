@@ -44,7 +44,7 @@ const CardsCarousel = (props) => {
         price={card.price}
         image={card.image}
         message="QUICK BUY"
-        size="small"
+        size="carousel"
       />
     );
   });
@@ -57,7 +57,7 @@ const CardsCarousel = (props) => {
       responsive={responsive}
       removeArrowOnDeviceType={["tablet", "mobile"]}
       deviceType={props.deviceType}
-      autoPlay={props.deviceType !== "mobile" ? true : false}
+      autoPlay={props.deviceType === "mobile" ? true : false}
       autoPlaySpeed={2000}
     >
       {cards}

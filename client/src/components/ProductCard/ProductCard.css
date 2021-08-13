@@ -1,22 +1,33 @@
 .card-container {
   text-align: center;
   text-transform: uppercase;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   margin: auto;
   position: relative;
+  text-decoration: none;
+  color: black;
 }
 
-.card-container-small {
+.card-container:hover,
+.card-container:active {
+  text-decoration: none;
+  color: black;
+}
+
+.card-container-small,
+.card-container-carousel {
   width: 250px;
   height: 290px;
+  padding: 0 1rem;
 }
 
 .card-container-large {
-  width: 30%;
+  width: 430px;
   height: 400px;
 }
 
-.card-container-large:hover {
+.card-container-large:hover,
+.card-container-small:hover {
   transform: scale(1.01);
 }
 
@@ -58,6 +69,10 @@
 .card-title-large {
   font-weight: bold;
   font-size: 2rem;
+}
+
+.card-body {
+  height: 3.5rem;
 }
 
 .image-overlay {
