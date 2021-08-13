@@ -73,9 +73,6 @@ const NavigationBar = (props) => {
             <li>
               <a href="/sale">SALE</a>
             </li>
-            <li>
-              <a href="/account">ACCOUNT</a>
-            </li>
           </ul>
         </div>
       </nav>

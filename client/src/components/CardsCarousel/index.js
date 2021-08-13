@@ -43,6 +43,8 @@ const CardsCarousel = (props) => {
         name={card.name}
         price={card.price}
         image={card.image}
+        message="QUICK BUY"
+        size="small"
       />
     );
   });
