@@ -11,14 +11,23 @@ const getThumbnailPosition = () => {
   }
 };
 
-const ImageSlider = (props) => {
+const ImageSlider = ({
+  items,
+  showThumbnails,
+  autoPlay,
+  showNav,
+  showBullets,
+}) => {
   return (
     <ImageGallery
-      items={props.images}
+      items={items}
       thumbnailPosition={getThumbnailPosition()}
       showFullscreenButton={false}
       showPlayButton={false}
-      showBullets={true}
+      showBullets={showBullets}
+      showThumbnails={showThumbnails}
+      autoPlay={autoPlay}
+      showNav={showNav}
     />
   );
 };

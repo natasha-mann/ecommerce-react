@@ -2,22 +2,25 @@ import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 
+import { GrFacebook } from "react-icons/gr";
+import { ImWhatsapp } from "react-icons/im";
+import { SiInstagram } from "react-icons/si";
+import { AiFillStar } from "react-icons/ai";
+
 import "./Product.css";
 import Title from "../../components/Title";
 import SizeButton from "../../components/SizeButton";
 import { PRODUCT, PRODUCTS } from "../../graphql/queries";
 import CardsCarousel from "../../components/CardsCarousel";
 import ImageSlider from "../../components/ImageSlider";
-import { useStoreContext } from "../../utils/GlobalState";
-import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
+import fitFinderImage from "../../images/fit_finder.png";
 
 const Product = () => {
   const { id } = useParams();
-  const [state, dispatch] = useStoreContext();
-  const { cart } = state;
 
   const [productStock, setProductStock] = useState(1);
   const [selectedSize, setSelectedSize] = useState(null);
+  const [sizeError, setSizeError] = useState("");
   const [activeButton, setActiveButton] = useState();
 
   const {
@@ -57,36 +60,14 @@ const Product = () => {
   }
 
   if (productData) {
-    const addToCart = (event) => {
-      event.preventDefault();
-
-      const productToAdd = {
-        id: productData.id,
-        image: productData.image,
-        price: productData.price,
-        size: selectedSize,
-        name: productData.name,
-      };
-      const itemInCart = cart.find((cartItem) => cartItem.id === id);
-      if (itemInCart) {
-        dispatch({
-          type: UPDATE_CART_QUANTITY,
-          id: id,
-          purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
-        });
-
-        // update local storage quantity
+    const handleAddToBasket = (event) => {
+      if (selectedSize) {
+        let newShoe = { ...productData };
+        newShoe.size = selectedSize;
+        // addToBasket(newShoe);
+        // handleSuccessModal();
       } else {
-        dispatch({
-          type: ADD_TO_CART,
-          product: { ...productToAdd, purchaseQuantity: 1 },
-        });
-
-        const newItem = {
-          ...productToAdd,
-          purchaseQuantity: 1,
-        };
-        localStorage.setItem("items", JSON.stringify(newItem));
+        setSizeError("Please select a size");
       }
     };
 
@@ -102,6 +83,7 @@ const Product = () => {
 
       setProductStock(stockNumber);
       setSelectedSize(size);
+      setSizeError("");
       setActiveButton(parseInt(event.target.id));
     };
 
@@ -122,7 +104,6 @@ const Product = () => {
         original: productInfo.image,
         thumbnail: productInfo.image,
         originalAlt: productInfo.name,
-        originalWidth: "200px",
         originalHeight: "400",
         thumbnailHeight: "92",
         thumbnailWidth: "120",
@@ -131,7 +112,6 @@ const Product = () => {
         original: productInfo.image,
         thumbnail: productInfo.image,
         originalAlt: productInfo.name,
-        originalWidth: "200px",
         originalHeight: "400",
         thumbnailHeight: "92",
         thumbnailWidth: "120",
@@ -140,7 +120,6 @@ const Product = () => {
         original: productInfo.image,
         thumbnail: productInfo.image,
         originalAlt: productInfo.name,
-        originalWidth: "200px",
         originalHeight: "400",
         thumbnailHeight: "92",
         thumbnailWidth: "120",
@@ -149,7 +128,6 @@ const Product = () => {
         original: productInfo.image,
         thumbnail: productInfo.image,
         originalAlt: productInfo.name,
-        originalWidth: "200px",
         originalHeight: "400",
         thumbnailHeight: "92",
         thumbnailWidth: "120",
@@ -160,7 +138,16 @@ const Product = () => {
       <>
         <div className="product-container">
           <div className="product-image-container">
-            <ImageSlider images={productImages} />
+            <ImageSlider
+              items={productImages}
+              showThumbnails={true}
+              autoPlay={false}
+              showBullets={true}
+              showNav={true}
+            />
+            <div className="fit-finder text-center mt-3">
+              <img src={fitFinderImage} alt="" />
+            </div>
           </div>
           <div className="product-info-container">
             <Title text={productInfo.name} />
@@ -170,23 +157,32 @@ const Product = () => {
             <div className="mt-3 text-center product-price">
               £{productInfo.price}
             </div>
+            <div className="icons-container text-center mt-3">
+              <AiFillStar className="icon" />
+              <AiFillStar className="icon" />
+              <AiFillStar className="icon" />
+              <AiFillStar className="icon" />
+              <AiFillStar className="icon" />
+              <p>Out of 38 reviews</p>
+            </div>
+
             <form>
               <div>
                 <div className="mt-3">SELECT SIZE:</div>
                 <div className="buttons-div">{sizeButtons}</div>
               </div>
+              {sizeError && (
+                <div className="size-error">Please select a size</div>
+              )}
 
               {productStock === 0 && (
                 <>
                   <div className="stock-info">
                     Sorry, this size is out of stock!
                   </div>
-                  <button
-                    className="cart-button-disabled"
-                    type="submit"
-                    disabled
-                  >
-                    ADD TO CART
+
+                  <button className="cart-button-email" type="submit">
+                    EMAIL ME WHEN AVAILABLE
                   </button>
                 </>
               )}
@@ -198,12 +194,23 @@ const Product = () => {
                   <button
                     className="cart-button"
                     type="submit"
-                    onClick={addToCart}
+                    onClick={handleAddToBasket}
                   >
                     ADD TO CART
                   </button>
                 </>
               )}
+              <div className="social-icons mx-auto">
+                <div>
+                  <GrFacebook />
+                </div>
+                <div>
+                  <ImWhatsapp />
+                </div>
+                <div>
+                  <SiInstagram />
+                </div>
+              </div>
             </form>
           </div>
         </div>

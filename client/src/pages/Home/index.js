@@ -22,7 +22,7 @@ const Home = () => {
 
     return (
       <>
-        <div className="carousel-container">
+        <div className="carousel-container mt-5">
           <Title text="WE THINK YOU'LL LOVE" />
           <CardsCarousel cardData={cardData} />
         </div>

@@ -4,13 +4,13 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 0 6rem;
+  padding: 0 2rem;
   margin-bottom: 3rem;
   box-sizing: border-box;
 }
 
 .product-image-container {
-  max-width: 800px;
+  width: 500px;
 }
 
 .product-styles {
@@ -28,6 +28,22 @@
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 1rem 0;
+}
+
+.social-icons {
+  display: flex;
+  font-size: 1.5rem;
+  padding-top: 1rem;
+  color: var(--red);
+  justify-content: center;
+}
+
+.social-icons div {
+  margin-right: 20px;
+}
+
+.social-icons div:hover {
+  cursor: pointer;
 }
 
 .stock-info {
@@ -50,6 +66,22 @@
   background-color: white;
   color: #212a2f;
   border: #212a2f 3px solid;
+  padding: 0.8rem 0;
+}
+
+.cart-button-email {
+  width: 100%;
+  padding: 1rem 0;
+  border: none;
+  background-color: red;
+  color: black;
+  font-weight: bold;
+}
+
+.cart-button-email:hover {
+  background-color: white;
+  color: #212a2f;
+  border: red 3px solid;
   padding: 0.8rem 0;
 }
 

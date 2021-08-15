@@ -1,0 +1,13 @@
+.announcements-div {
+  display: flex;
+  justify-content: space-around;
+}
+
+.announcement {
+  height: 3rem;
+  width: 34%;
+  background-color: red;
+  color: black;
+  padding-top: 0.6rem;
+  font-weight: bold;
+}
