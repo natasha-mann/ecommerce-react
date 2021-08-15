@@ -4,8 +4,13 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 3rem 6rem;
+  padding: 0 6rem;
+  margin-bottom: 3rem;
   box-sizing: border-box;
+}
+
+.product-image-container {
+  max-width: 800px;
 }
 
 .product-styles {

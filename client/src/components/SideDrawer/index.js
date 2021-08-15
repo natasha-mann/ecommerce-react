@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 
 import "./SideDrawer.css";
@@ -9,10 +8,6 @@ const SideDrawer = ({ show, setShow }) => {
     drawerClasses = "side-drawer open";
   }
 
-  // const closeSideDrawerHandler = () => {
-  //   return setIsSideDrawer(false);
-  // };
-
   return (
     <nav className={drawerClasses}>
       <button className="side-drawer-close">
@@ -20,22 +15,22 @@ const SideDrawer = ({ show, setShow }) => {
       </button>
       <ul>
         <li>
-          <a>WOMEN</a>
+          <a href="/womens">WOMEN</a>
         </li>
         <li>
-          <a>MEN</a>
+          <a href="/mens">MEN</a>
         </li>
         <li>
-          <a>CHILDREN</a>
+          <a href="/childrens">CHILDREN</a>
         </li>
         <li>
-          <a>TRAINERS</a>
+          <a href="/trainers">TRAINERS</a>
         </li>
         <li>
-          <a>SALE</a>
+          <a href="/sale">SALE</a>
         </li>
         <li>
-          <a>ACCOUNT</a>
+          <a href="/account">ACCOUNT</a>
         </li>
       </ul>
     </nav>

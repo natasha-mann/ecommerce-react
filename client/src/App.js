@@ -26,7 +26,7 @@ function App() {
       <Router>
         <div style={{ height: "100%" }}>
           <NavigationElements />
-          <main style={{ marginTop: "10rem" }}>
+          <main className="main-body">
             <Routes />
           </main>
         </div>

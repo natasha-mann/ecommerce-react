@@ -1,12 +1,13 @@
 import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
+import { useState } from "react";
 
 import "./Product.css";
 import Title from "../../components/Title";
 import SizeButton from "../../components/SizeButton";
 import { PRODUCT, PRODUCTS } from "../../graphql/queries";
 import CardsCarousel from "../../components/CardsCarousel";
-import { useState } from "react";
+import ImageSlider from "../../components/ImageSlider";
 
 const Product = (props) => {
   const [productStock, setProductStock] = useState(1);
@@ -72,11 +73,50 @@ const Product = (props) => {
       );
     });
 
+    const productImages = [
+      {
+        original: productInfo.image,
+        thumbnail: productInfo.image,
+        originalAlt: productInfo.name,
+        originalWidth: "200px",
+        originalHeight: "400",
+        thumbnailHeight: "92",
+        thumbnailWidth: "120",
+      },
+      {
+        original: productInfo.image,
+        thumbnail: productInfo.image,
+        originalAlt: productInfo.name,
+        originalWidth: "200px",
+        originalHeight: "400",
+        thumbnailHeight: "92",
+        thumbnailWidth: "120",
+      },
+      {
+        original: productInfo.image,
+        thumbnail: productInfo.image,
+        originalAlt: productInfo.name,
+        originalWidth: "200px",
+        originalHeight: "400",
+        thumbnailHeight: "92",
+        thumbnailWidth: "120",
+      },
+      {
+        original: productInfo.image,
+        thumbnail: productInfo.image,
+        originalAlt: productInfo.name,
+        originalWidth: "200px",
+        originalHeight: "400",
+        thumbnailHeight: "92",
+        thumbnailWidth: "120",
+      },
+    ];
+
     return (
       <>
         <div className="product-container">
           <div className="product-image-container">
-            <img src={productInfo.image} alt={productInfo.name} />
+            <ImageSlider images={productImages} />
           </div>
           <div className="product-info-container">
             <Title text={productInfo.name} />

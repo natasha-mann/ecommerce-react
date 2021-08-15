@@ -1,0 +1,9 @@
+.main-body {
+  margin-top: 10rem;
+}
+
+@media screen and (max-width: 768px) {
+  .main-body {
+    margin-top: 5rem;
+  }
+}
