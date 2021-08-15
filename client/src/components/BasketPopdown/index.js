@@ -8,7 +8,7 @@ const BasketPopdown = ({ handleBasketVisibility }) => {
   return (
     <>
       {/* <Backdrop /> */}
-      <div className="basket-container open">
+      <div className="basket-container">
         <div className="basket-header">
           <div className="basket-title">My Basket | 4 Items</div>
           <div className="icon" onClick={handleBasketVisibility}>

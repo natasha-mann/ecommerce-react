@@ -5,8 +5,11 @@ import Title from "../../components/Title";
 import CardsCarousel from "../../components/CardsCarousel";
 import ProductCard from "../../components/ProductCard";
 import { PRODUCTS } from "../../graphql/queries";
+import RegisterModal from "../../components/RegisterModal";
+import { useState } from "react";
 
 const Home = () => {
+  const [modalShow, setModalShow] = useState(true);
   const { data, loading, error } = useQuery(PRODUCTS);
 
   if (loading) {
@@ -26,6 +29,7 @@ const Home = () => {
           <Title text="WE THINK YOU'LL LOVE" />
           <CardsCarousel cardData={cardData} />
         </div>
+        <RegisterModal show={modalShow} onHide={() => setModalShow(false)} />
         <Title text="SHOP BY CATEGORY" />
         <div className="main-card-container">
           <ProductCard
