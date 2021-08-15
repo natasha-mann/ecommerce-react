@@ -1,0 +1,41 @@
+.basket-item-container {
+  margin: 1rem 0;
+}
+
+.basket-item {
+  display: flex;
+  background-color: #eeeeee;
+  width: 100%;
+}
+
+.basket-image-container {
+  display: flex;
+  height: 8rem;
+}
+
+.basket-product-image {
+  width: 7rem;
+}
+
+.text-container {
+  position: relative;
+  margin-left: 1rem;
+  padding-top: 0.5rem;
+  width: 100%;
+}
+
+.header {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.item {
+  font-size: 1rem;
+  padding: 0.2rem 0;
+}
+
+.bin {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+}

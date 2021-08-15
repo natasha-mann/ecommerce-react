@@ -15,6 +15,7 @@ import "./App.css";
 import ChatWidget from "./components/ChatWidget";
 import Announcements from "./components/Announcements";
 import AnnouncementsMobile from "./components/AnnouncementsMobile";
+import BasketPopdown from "./components/BasketPopdown";
 
 const httpLink = createHttpLink({
   uri: process.env.GRAPHQL_URL || "http://localhost:4000/",
@@ -26,12 +27,16 @@ const client = new ApolloClient({
 });
 
 function App() {
+  const handleBasketVisibility = () => {
+    return true;
+  };
+
   return (
     <ApolloProvider client={client}>
       <Router>
         <div style={{ height: "100%" }}>
           <NavigationElements />
-
+          <BasketPopdown handleBasketVisibility={handleBasketVisibility} />
           <main className="main-body">
             {isMobile ? <AnnouncementsMobile /> : <Announcements />}
             <Routes />

@@ -1,0 +1,84 @@
+.basket-container {
+  position: fixed;
+  top: 1;
+  right: 0;
+  width: 20rem;
+  height: 25rem;
+  background-color: white;
+  z-index: 100;
+  overflow: auto;
+  box-shadow: 1px 0px 7px rgba(0, 0, 0.5);
+  transform: translateY(-104%);
+  transition: transform 0.3s ease-out;
+}
+
+.basket-container.open {
+  transform: translateY(0);
+}
+
+.basket-header {
+  padding: 0.5rem;
+  background-color: #eeeeee;
+}
+.basket-title {
+  padding-left: 0.8rem;
+  padding-top: 0.5rem;
+  font-size: 1.3rem;
+  padding-bottom: 10px;
+}
+
+.icon {
+  color: red;
+  font-size: 2rem;
+  position: absolute;
+  top: 0.3rem;
+  right: 1rem;
+}
+
+.icon:hover {
+  cursor: pointer;
+}
+
+.sub-total {
+  font-size: 1.3rem;
+  padding: 2rem 0;
+}
+
+.delivery-text {
+  font-size: 0.8rem;
+  font-style: italic;
+  padding-bottom: 1rem;
+}
+
+.sub-total {
+  margin-left: 1rem;
+}
+
+.button-div {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.checkout-button {
+  width: 100%;
+  border: 1px solid red;
+  background-color: red;
+  color: #fff;
+  padding: 0.2rem 0.5rem;
+  text-align: center;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.checkout-button:hover {
+  border: 1px solid red;
+  background-color: #fff;
+  color: red;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 500px) {
+  .basket-container {
+    width: 100%;
+  }
+}
