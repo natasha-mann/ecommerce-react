@@ -4,12 +4,13 @@ import { useParams } from "react-router-dom";
 import "./Product.css";
 import Title from "../../components/Title";
 import SizeButton from "../../components/SizeButton";
-// import ProductCard from "../../components/ProductCard";
 import { PRODUCT, PRODUCTS } from "../../graphql/queries";
-import ProductCard from "../../components/ProductCard";
 import CardsCarousel from "../../components/CardsCarousel";
+import { useState } from "react";
 
 const Product = (props) => {
+  const [productStock, setProductStock] = useState(1);
+
   const { id } = useParams();
   const {
     data: productData,
@@ -54,8 +55,21 @@ const Product = (props) => {
       return style.charAt(0).toUpperCase() + style.slice(1);
     });
 
+    const displayStock = (event) => {
+      const stockNumber = parseInt(event.target.getAttribute("data-stock"));
+
+      setProductStock(stockNumber);
+    };
+
     const sizeButtons = productInfo.sizes.map((size) => {
-      return <SizeButton size={size.size} stock={size.stock} />;
+      return (
+        <SizeButton
+          key={size.size}
+          size={size.size}
+          stock={size.stock}
+          onClick={displayStock}
+        />
+      );
     });
 
     return (
@@ -77,9 +91,31 @@ const Product = (props) => {
                 <div className="mt-3">SELECT SIZE:</div>
                 <div className="buttons-div">{sizeButtons}</div>
               </div>
-              <button className="cart-button" type="submit">
-                ADD TO CART
-              </button>
+
+              {productStock === 0 && (
+                <>
+                  <div className="stock-info">
+                    Sorry, this size is out of stock!
+                  </div>
+                  <button
+                    className="cart-button-disabled"
+                    type="submit"
+                    disabled
+                  >
+                    ADD TO CART
+                  </button>
+                </>
+              )}
+              {productStock !== 0 && productStock && (
+                <>
+                  <div className="stock-info">
+                    Only {productStock} remaining in stock!
+                  </div>
+                  <button className="cart-button" type="submit">
+                    ADD TO CART
+                  </button>
+                </>
+              )}
             </form>
           </div>
         </div>

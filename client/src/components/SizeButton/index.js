@@ -1,9 +1,14 @@
 import "./SizeButton.css";
 
-const SizeButton = (props) => {
+const SizeButton = ({ size, onClick, stock }) => {
   return (
-    <button type="button" className="size-button">
-      <span>{props.size}</span>
+    <button
+      type="button"
+      className="size-button"
+      onClick={onClick}
+      data-stock={stock}
+    >
+      {size}
     </button>
   );
 };

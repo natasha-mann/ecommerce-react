@@ -54,6 +54,7 @@
 .card-image:hover {
   cursor: pointer;
 }
+
 .card-link {
   text-decoration: none;
   color: black;
