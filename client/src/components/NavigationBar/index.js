@@ -4,6 +4,7 @@ import "bootstrap/dist/js/bootstrap";
 
 import ToggleButton from "../ToggleButton";
 import "./NavigationBar.css";
+import BasketPopdown from "../BasketPopdown";
 
 const NavigationBar = (props) => {
   return (

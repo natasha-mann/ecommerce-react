@@ -6,6 +6,7 @@ import {
   createHttpLink,
 } from "@apollo/client";
 
+import { StoreProvider } from "./utils/GlobalState";
 import Routes from "./Routes";
 import NavigationElements from "./pages/NavigationElements/NavigationElements";
 
@@ -24,12 +25,14 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div style={{ height: "100%" }}>
-          <NavigationElements />
-          <main className="main-body">
-            <Routes />
-          </main>
-        </div>
+        <StoreProvider>
+          <div style={{ height: "100%" }}>
+            <NavigationElements />
+            <main className="main-body">
+              <Routes />
+            </main>
+          </div>
+        </StoreProvider>
       </Router>
     </ApolloProvider>
   );

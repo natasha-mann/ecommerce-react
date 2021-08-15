@@ -8,13 +8,18 @@ import SizeButton from "../../components/SizeButton";
 import { PRODUCT, PRODUCTS } from "../../graphql/queries";
 import CardsCarousel from "../../components/CardsCarousel";
 import ImageSlider from "../../components/ImageSlider";
+import { useStoreContext } from "../../utils/GlobalState";
+import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 
-const Product = (props) => {
+const Product = () => {
+  const { id } = useParams();
+  const [state, dispatch] = useStoreContext();
+  const { cart } = state;
+
   const [productStock, setProductStock] = useState(1);
   const [selectedSize, setSelectedSize] = useState(null);
   const [activeButton, setActiveButton] = useState();
 
-  const { id } = useParams();
   const {
     data: productData,
     loading: productLoading,
@@ -52,6 +57,39 @@ const Product = (props) => {
   }
 
   if (productData) {
+    const addToCart = (event) => {
+      event.preventDefault();
+
+      const productToAdd = {
+        id: productData.id,
+        image: productData.image,
+        price: productData.price,
+        size: selectedSize,
+        name: productData.name,
+      };
+      const itemInCart = cart.find((cartItem) => cartItem.id === id);
+      if (itemInCart) {
+        dispatch({
+          type: UPDATE_CART_QUANTITY,
+          id: id,
+          purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
+        });
+
+        // update local storage quantity
+      } else {
+        dispatch({
+          type: ADD_TO_CART,
+          product: { ...productToAdd, purchaseQuantity: 1 },
+        });
+
+        const newItem = {
+          ...productToAdd,
+          purchaseQuantity: 1,
+        };
+        localStorage.setItem("items", JSON.stringify(newItem));
+      }
+    };
+
     const productInfo = productData.product;
 
     const styles = productInfo.style.map((style) => {
@@ -157,7 +195,11 @@ const Product = (props) => {
                   <div className="stock-info">
                     Only {productStock} remaining in stock!
                   </div>
-                  <button className="cart-button" type="submit">
+                  <button
+                    className="cart-button"
+                    type="submit"
+                    onClick={addToCart}
+                  >
                     ADD TO CART
                   </button>
                 </>

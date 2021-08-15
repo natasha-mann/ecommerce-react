@@ -19,7 +19,7 @@ const typeDefs = gql`
 
   input Filter {
     type: String
-    styles: [ID]
+    style: [String]
     color: [String]
   }
 
