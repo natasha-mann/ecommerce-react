@@ -11,6 +11,8 @@ import ImageSlider from "../../components/ImageSlider";
 
 const Product = (props) => {
   const [productStock, setProductStock] = useState(1);
+  const [selectedSize, setSelectedSize] = useState(null);
+  const [activeButton, setActiveButton] = useState();
 
   const { id } = useParams();
   const {
@@ -56,10 +58,13 @@ const Product = (props) => {
       return style.charAt(0).toUpperCase() + style.slice(1);
     });
 
-    const displayStock = (event) => {
+    const handleSizeClick = (event) => {
       const stockNumber = parseInt(event.target.getAttribute("data-stock"));
+      const size = parseInt(event.target.innerHTML);
 
       setProductStock(stockNumber);
+      setSelectedSize(size);
+      setActiveButton(parseInt(event.target.id));
     };
 
     const sizeButtons = productInfo.sizes.map((size) => {
@@ -68,7 +73,8 @@ const Product = (props) => {
           key={size.size}
           size={size.size}
           stock={size.stock}
-          onClick={displayStock}
+          onClick={handleSizeClick}
+          activeButton={activeButton}
         />
       );
     });
