@@ -15,12 +15,14 @@ const typeDefs = gql`
     image: String!
     price: Float!
     sizes: [Size]
+    brand: String!
   }
 
   input Filter {
     type: String
     style: [String]
     color: [String]
+    brand: [String]
   }
 
   input PriceOrder {

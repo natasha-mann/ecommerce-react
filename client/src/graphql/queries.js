@@ -52,6 +52,7 @@ export const WOMENS_PRODUCTS = gql`
       color
       image
       price
+      brand
       sizes {
         stock
         size

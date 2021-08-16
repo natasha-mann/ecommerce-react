@@ -71,12 +71,18 @@ const MobileFilters = ({ handleFilter, handleSort }) => {
           id="dropdown-item-button"
           title="+ Brands"
         >
-          <Dropdown.Item as="button" data-filter="Nike" onClick={handleFilter}>
+          <Dropdown.Item
+            as="button"
+            data-key="brand"
+            data-value="nike"
+            onClick={handleFilter}
+          >
             Nike
           </Dropdown.Item>
           <Dropdown.Item
             as="button"
-            data-filter="Adidas"
+            data-key="brand"
+            data-value="adidas"
             onClick={handleFilter}
           >
             Adidas
@@ -84,12 +90,39 @@ const MobileFilters = ({ handleFilter, handleSort }) => {
 
           <Dropdown.Item
             as="button"
-            data-filter="Reebok"
+            data-key="brand"
+            data-value="reebok"
             onClick={handleFilter}
           >
             Reebok
           </Dropdown.Item>
-          <Dropdown.Item as="button" data-filter="all" onClick={handleFilter}>
+
+          <Dropdown.Item
+            as="button"
+            data-key="brand"
+            data-value="kurtGeiger"
+            onClick={handleFilter}
+          >
+            Kurt Geiger
+          </Dropdown.Item>
+
+          <Dropdown.Item
+            as="button"
+            data-key="brand"
+            data-value="converse"
+            onClick={handleFilter}
+          >
+            UGG
+          </Dropdown.Item>
+          <Dropdown.Item
+            as="button"
+            data-key="brand"
+            data-value="converse"
+            onClick={handleFilter}
+          >
+            Converse
+          </Dropdown.Item>
+          <Dropdown.Item as="button" onClick={handleFilter}>
             All
           </Dropdown.Item>
         </DropdownButton>

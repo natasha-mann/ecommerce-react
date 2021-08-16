@@ -51,7 +51,7 @@ const Womens = () => {
   const handleSetFilters = (event) => {
     const key = event.target.getAttribute("data-key");
     const value = event.target.getAttribute("data-value");
-
+    console.log({ [key]: value });
     if (key && value) {
       setFilters({ [key]: value });
     } else {

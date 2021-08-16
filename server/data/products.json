@@ -6,6 +6,7 @@
     "color": "black",
     "image": "https://images.unsplash.com/photo-1494955464529-790512c65305?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80",
     "price": 49.99,
+    "brand": "kurtGeiger",
     "sizes": [
       { "size": 2, "stock": 2 },
       { "size": 3, "stock": 2 },
@@ -23,6 +24,7 @@
     "color": "black",
     "image": "https://images.unsplash.com/flagged/photo-1584862442072-9368b0d37e97?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
     "price": 69.99,
+    "brand": "ugg",
     "sizes": [
       { "size": 2, "stock": 2 },
       { "size": 3, "stock": 0 },
@@ -40,6 +42,7 @@
     "color": "orange",
     "image": "https://images.unsplash.com/photo-1561909848-977d0617f275?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
     "price": 55.0,
+    "brand": "converse",
     "sizes": [
       { "size": 2, "stock": 2 },
       { "size": 3, "stock": 2 },
@@ -57,6 +60,7 @@
     "color": "red",
     "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80",
     "price": 74.99,
+    "brand": "nike",
     "sizes": [
       { "size": 2, "stock": 2 },
       { "size": 3, "stock": 2 },
@@ -74,6 +78,7 @@
     "color": "multi",
     "image": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80",
     "price": 28.99,
+    "brand": "kurtGeiger",
     "sizes": [
       { "size": 2, "stock": 0 },
       { "size": 3, "stock": 2 },
@@ -91,6 +96,7 @@
     "color": "white",
     "image": "https://images.unsplash.com/photo-1518049362265-d5b2a6467637?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80",
     "price": 35.99,
+    "brand": "kurtGeiger",
     "sizes": [
       { "size": 2, "stock": 2 },
       { "size": 3, "stock": 2 },
@@ -108,6 +114,7 @@
     "color": "yellow",
     "image": "https://images.unsplash.com/photo-1546367564-ade1880f8921?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80",
     "price": 65.99,
+    "brand": "adidas",
     "sizes": [
       { "size": 2, "stock": 2 },
       { "size": 3, "stock": 0 },
@@ -125,6 +132,7 @@
     "color": "brown",
     "image": "https://images.unsplash.com/photo-1562273138-f46be4ebdf33?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
     "price": 25.99,
+    "brand": "kurtGeiger",
     "sizes": [
       { "size": 2, "stock": 2 },
       { "size": 3, "stock": 2 },
@@ -142,6 +150,7 @@
     "color": "red",
     "image": "https://images.unsplash.com/photo-1613987876445-fcb353cd8e27?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80",
     "price": 18.99,
+    "brand": "kurtGeiger",
     "sizes": [
       { "size": 2, "stock": 0 },
       { "size": 3, "stock": 2 },
@@ -159,6 +168,7 @@
     "color": "black",
     "image": "https://images.unsplash.com/photo-1596703263926-eb0762ee17e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=375&q=80",
     "price": 29.99,
+    "brand": "kurtGeiger",
     "sizes": [
       { "size": 2, "stock": 2 },
       { "size": 3, "stock": 2 },
@@ -176,6 +186,7 @@
     "color": "brown",
     "image": "https://images.unsplash.com/photo-1620554740172-7c02a78b239d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
     "price": 29.99,
+    "brand": "ugg",
     "sizes": [
       { "size": 6, "stock": 0 },
       { "size": 7, "stock": 2 },
@@ -193,6 +204,7 @@
     "color": "grey",
     "image": "https://images.unsplash.com/photo-1562183241-840b8af0721e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=401&q=80",
     "price": 59.99,
+    "brand": "reebok",
     "sizes": [
       { "size": 6, "stock": 0 },
       { "size": 7, "stock": 2 },
@@ -210,6 +222,7 @@
     "color": "red",
     "image": "https://images.unsplash.com/photo-1516478177764-9fe5bd7e9717?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80",
     "price": 49.99,
+    "brand": "nike",
     "sizes": [
       { "size": 6, "stock": 0 },
       { "size": 7, "stock": 2 },
@@ -227,6 +240,7 @@
     "color": "black",
     "image": "https://images.unsplash.com/photo-1620554740172-7c02a78b239d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
     "price": 79.99,
+    "brand": "adidas",
     "sizes": [
       { "size": 6, "stock": 0 },
       { "size": 7, "stock": 2 },
@@ -244,6 +258,7 @@
     "color": "black",
     "image": "https://images.unsplash.com/photo-1570464197285-9949814674a7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80",
     "price": 69.99,
+    "brand": "nike",
     "sizes": [
       { "size": 6, "stock": 0 },
       { "size": 7, "stock": 2 },
@@ -261,6 +276,7 @@
     "color": "black",
     "image": "https://images.unsplash.com/photo-1621881538090-b2b5ffaa996a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
     "price": 29.99,
+    "brand": "kurtGeiger",
     "sizes": [
       { "size": 6, "stock": 3 },
       { "size": 7, "stock": 2 },
@@ -278,6 +294,7 @@
     "color": "green",
     "image": "https://images.unsplash.com/photo-1539185441755-769473a23570?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=751&q=80",
     "price": 41.99,
+    "brand": "reebok",
     "sizes": [
       { "size": 6, "stock": 4 },
       { "size": 7, "stock": 2 },
@@ -295,6 +312,7 @@
     "color": "sand",
     "image": "https://images.unsplash.com/photo-1603487742131-4160ec999306?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80",
     "price": 37.99,
+    "brand": "ugg",
     "sizes": [
       { "size": 6, "stock": 2 },
       { "size": 7, "stock": 2 },
@@ -312,6 +330,7 @@
     "color": "brown",
     "image": "https://images.unsplash.com/photo-1616406432452-07bc5938759d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80",
     "price": 39.99,
+    "brand": "ugg",
     "sizes": [
       { "size": 6, "stock": 1 },
       { "size": 7, "stock": 2 },
@@ -329,6 +348,7 @@
     "color": "brown",
     "image": "https://images.unsplash.com/photo-1520809382381-d95e6364bbdb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80",
     "price": 59.99,
+    "brand": "ugg",
     "sizes": [
       { "size": 6, "stock": 2 },
       { "size": 7, "stock": 2 },

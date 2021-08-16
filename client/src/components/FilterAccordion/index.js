@@ -31,18 +31,25 @@ const FilterAccordion = ({ handleFilter, handleSort }) => {
         </AccordionItemHeading>
         <AccordionItemPanel className="accordion-body">
           <ul className="filters-list">
-            <li data-filter="Nike" onClick={handleFilter}>
+            <li data-key="brand" data-value="nike" onClick={handleFilter}>
               Nike
             </li>
-            <li data-filter="Adidas" onClick={handleFilter}>
+            <li data-key="brand" data-value="adidas" onClick={handleFilter}>
               Adidas
             </li>
-            <li data-filter="Reebok" onClick={handleFilter}>
+            <li data-key="brand" data-value="reebok" onClick={handleFilter}>
               Reebok
             </li>
-            <li data-filter="all" onClick={handleFilter}>
-              All
+            <li data-key="brand" data-value="kurtGeiger" onClick={handleFilter}>
+              Kurt Geiger
             </li>
+            <li data-key="brand" data-value="ugg" onClick={handleFilter}>
+              UGG
+            </li>
+            <li data-key="brand" data-value="converse" onClick={handleFilter}>
+              Converse
+            </li>
+            <li onClick={handleFilter}>All</li>
           </ul>
         </AccordionItemPanel>
       </AccordionItem>

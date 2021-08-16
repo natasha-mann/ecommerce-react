@@ -27,6 +27,10 @@ const schema = {
     type: Number,
     required: true,
   },
+  brand: {
+    type: String,
+    required: true,
+  },
   sizes: [
     {
       size: { type: Number, required: true },
