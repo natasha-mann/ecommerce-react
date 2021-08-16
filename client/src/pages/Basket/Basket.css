@@ -54,9 +54,27 @@
   margin: 1rem 0 2rem 0;
 }
 
+.invalid-discount {
+  color: red;
+  font-weight: bold;
+}
+
 .discount-input {
-  width: 80%;
+  width: 70%;
   height: 2.5rem;
+  padding-left: 1rem;
+}
+
+.apply-button {
+  height: 2.5rem;
+  background-color: grey;
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+
+.apply-button:hover {
+  transform: scale(1.1);
 }
 
 .confirm-button {
