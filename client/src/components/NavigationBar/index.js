@@ -2,10 +2,20 @@ import { BiSearch, BiUser, BiShoppingBag } from "react-icons/bi";
 
 import "bootstrap/dist/js/bootstrap";
 
+import { useBasketContext } from "../../contexts/BasketProvider";
 import ToggleButton from "../ToggleButton";
 import "./NavigationBar.css";
 
 const NavigationBar = (props) => {
+  const { dispatch } = useBasketContext();
+
+  const handleOnMouseEnter = () => {
+    dispatch({
+      type: "TOGGLE_CART",
+      payload: true,
+    });
+  };
+
   return (
     <header className="nav-container">
       <div className="container-fluid">
@@ -46,9 +56,13 @@ const NavigationBar = (props) => {
                 </a>
               </div>
               <div>
-                <a className="nav-basket-icon" href="/basket">
+                <button
+                  className="nav-basket-icon"
+                  href="/basket"
+                  onMouseEnter={handleOnMouseEnter}
+                >
                   <BiShoppingBag color="black" fontSize="1.5em" />
-                </a>
+                </button>
               </div>
             </div>
           </div>

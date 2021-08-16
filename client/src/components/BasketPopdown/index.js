@@ -27,6 +27,18 @@ const BasketPopdown = () => {
 
   const products = JSON.parse(localStorage.getItem("cart")) || [];
 
+  const renderBasketHeader = () => {
+    const numberOfItems = products.reduce((acc, product) => {
+      return acc + product.qty;
+    }, 0);
+    return (
+      <div className="popdown-title">
+        My Basket | {numberOfItems}{" "}
+        {numberOfItems > 1 ? <span>Items</span> : <span>Item</span>}
+      </div>
+    );
+  };
+
   const renderBasket = () => {
     if (products.length) {
       const cards = products.map((product) => (
@@ -74,11 +86,7 @@ const BasketPopdown = () => {
       {showCart && <Backdrop />}
       <div className={`popdown-container ${displayCart()}`}>
         <div className="popdown-header">
-          <div className="popdown-title">
-            My Basket | {products.length}{" "}
-            {products.length > 1 && <span>Items</span>}
-            {products.length === 1 && <span>Item</span>}
-          </div>
+          {renderBasketHeader()}
           <div className="icon" onClick={handleBasketVisibility}>
             <RiCloseFill />
           </div>

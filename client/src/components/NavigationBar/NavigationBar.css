@@ -75,6 +75,8 @@
   text-decoration: none;
   color: #000;
   margin: 0 1rem;
+  background-color: transparent;
+  border: none;
 }
 
 .nav-basket-icon:hover,

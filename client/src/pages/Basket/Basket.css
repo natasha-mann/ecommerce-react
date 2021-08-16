@@ -10,18 +10,18 @@
 }
 
 .basket-detail-container {
-  width: 60%;
+  width: 50%;
 }
 
 .basket-summary-container {
-  width: 30%;
+  width: 40%;
 }
 
 .empty-basket {
   background-color: #eeeeee;
+  width: 50%;
   border-radius: 5%;
   height: 5rem;
-  /* width: 100%; */
   margin: 3rem 1rem;
   padding: 1rem 0;
   font-weight: bold;
@@ -30,7 +30,7 @@
 .basket-summary {
   background-color: #eeeeee;
   border-radius: 5%;
-  height: 21rem;
+  height: 30rem;
   width: 100%;
   margin-top: 1rem;
 }
@@ -43,11 +43,20 @@
 
 .summary-info {
   margin-left: 2rem;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
 }
 
 .summary-info div {
   margin-bottom: 1rem;
+}
+
+.discount-container {
+  margin: 1rem 0 2rem 0;
+}
+
+.discount-input {
+  width: 80%;
+  height: 2.5rem;
 }
 
 .confirm-button {
@@ -66,4 +75,18 @@
   background-color: white;
   color: red;
   border: red 1px solid;
+}
+
+@media screen and (max-width: 683px) {
+  .basket-detail-container {
+    width: 90%;
+  }
+
+  .basket-summary-container {
+    width: 90%;
+  }
+
+  .empty-basket {
+    width: 90%;
+  }
 }

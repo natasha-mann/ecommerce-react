@@ -47,3 +47,8 @@
   right: 1rem;
   bottom: 1rem;
 }
+
+.bin:hover {
+  cursor: pointer;
+  color: red;
+}

@@ -57,6 +57,7 @@ const reducer = (state, action) => {
             item.size === action.payload.product.size &&
             item.qty > 1
           ) {
+            console.log("payload", action.payload.product);
             return {
               ...item,
               qty: item.qty - 1,
