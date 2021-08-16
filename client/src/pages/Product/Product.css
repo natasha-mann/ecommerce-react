@@ -47,11 +47,17 @@
   cursor: pointer;
 }
 
-.stock-info {
+.stock-info,
+.size-error {
   padding: 1rem 0;
   margin-bottom: 1rem;
   font-weight: 400;
   font-size: 1.2rem;
+}
+
+.size-error {
+  color: red;
+  font-weight: bold;
 }
 
 .cart-button {
