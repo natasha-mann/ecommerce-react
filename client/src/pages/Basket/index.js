@@ -1,19 +1,19 @@
 import BasketItem from "../../components/BasketItem";
 import Title from "../../components/Title";
-import "./Checkout.css";
+import "./Basket.css";
 
-const Checkout = () => {
+const Basket = () => {
   return (
     <div>
       <Title text="MY BASKET" />
-      <div className="checkout-container">
-        <div className="checkout-detail-container">
+      <div className="basket-container">
+        <div className="basket-detail-container">
           <BasketItem size="large" />
           <BasketItem size="large" />
           <BasketItem size="large" />
         </div>
-        <div className="checkout-summary-container">
-          <div className="checkout-summary">
+        <div className="basket-summary-container">
+          <div className="basket-summary">
             <div className="summary-title text-center">TOTAL</div>
 
             <hr />
@@ -25,7 +25,7 @@ const Checkout = () => {
             </div>
 
             <div className="confirm-button-div text-center">
-              <button className="confirm-button">CHECKOUT</button>
+              <button className="confirm-button">Basket</button>
             </div>
           </div>
         </div>
@@ -34,4 +34,4 @@ const Checkout = () => {
   );
 };
 
-export default Checkout;
+export default Basket;

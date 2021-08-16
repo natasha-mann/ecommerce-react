@@ -37,10 +37,16 @@ export const PRODUCT = gql`
 `;
 
 export const WOMENS_PRODUCTS = gql`
-  query Query($womensProductsFilters: Filter) {
-    womensProducts(filters: $womensProductsFilters) {
-      type
+  query Query(
+    $womensProductsOrderBy: PriceOrder
+    $womensProductsFilters: Filter
+  ) {
+    womensProducts(
+      orderBy: $womensProductsOrderBy
+      filters: $womensProductsFilters
+    ) {
       id
+      type
       name
       style
       color

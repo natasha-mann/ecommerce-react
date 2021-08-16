@@ -23,9 +23,18 @@ const typeDefs = gql`
     color: [String]
   }
 
+  input PriceOrder {
+    price: Sort
+  }
+
+  enum Sort {
+    asc
+    desc
+  }
+
   type Query {
     products(sortBy: String, top: Int, filters: Filter): [Product]
-    womensProducts(filters: Filter): [Product]
+    womensProducts(filters: Filter, orderBy: PriceOrder): [Product]
     product(id: ID!): Product
   }
 `;

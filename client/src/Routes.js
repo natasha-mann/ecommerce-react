@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
 import Womens from "./pages/Womens";
-import Checkout from "./pages/Checkout";
+import Basket from "./pages/Basket";
 
 const Routes = () => {
   return (
@@ -17,8 +17,11 @@ const Routes = () => {
       <Route exact path="/product/:id">
         <Product />
       </Route>
+      <Route exact path="/basket">
+        <Basket />
+      </Route>
       <Route exact path="/checkout">
-        <Checkout />
+        {/* <Checkout /> */}
       </Route>
     </Switch>
   );

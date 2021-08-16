@@ -1,4 +1,4 @@
-.basket-container {
+.popdown-container {
   position: fixed;
   top: 1;
   right: 0;
@@ -12,15 +12,15 @@
   transition: transform 0.3s ease-out;
 }
 
-.basket-container.open {
+.popdown-container.open {
   transform: translateY(0);
 }
 
-.basket-header {
+.popdown-header {
   padding: 0.5rem;
   background-color: #eeeeee;
 }
-.basket-title {
+.popdown-title {
   padding-left: 0.8rem;
   padding-top: 0.5rem;
   font-size: 1.3rem;
@@ -47,7 +47,6 @@
 .delivery-text {
   font-size: 0.8rem;
   font-style: italic;
-  padding-bottom: 1rem;
 }
 
 .sub-total {
@@ -78,7 +77,7 @@
 }
 
 @media only screen and (max-width: 500px) {
-  .basket-container {
+  .popdown-container {
     width: 100%;
   }
 }

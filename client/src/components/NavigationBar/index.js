@@ -47,7 +47,7 @@ const NavigationBar = (props) => {
                 </a>
               </div>
               <div>
-                <a className="nav-basket-icon" href="/checkout">
+                <a className="nav-basket-icon" href="/basket">
                   <BiShoppingBag color="black" fontSize="1.5em" />
                 </a>
               </div>

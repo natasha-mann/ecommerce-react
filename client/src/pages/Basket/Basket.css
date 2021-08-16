@@ -1,4 +1,4 @@
-.checkout-container {
+.basket-container {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -9,15 +9,15 @@
   box-sizing: border-box;
 }
 
-.checkout-detail-container {
+.basket-detail-container {
   width: 60%;
 }
 
-.checkout-summary-container {
+.basket-summary-container {
   width: 30%;
 }
 
-.checkout-summary {
+.basket-summary {
   background-color: #eeeeee;
   border-radius: 5%;
   height: 21rem;
@@ -54,5 +54,5 @@
   margin: auto;
   background-color: white;
   color: red;
-  border: red;
+  border: red 1px solid;
 }

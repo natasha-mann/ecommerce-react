@@ -7,8 +7,8 @@ import "./AnnouncementsMobile.css";
 
 const announcements = [
   "10% OFF FOR STUDENTS",
-  "BUY NOW, PAY LATER WITH KLARNA",
-  "FREE DELIVERY AND RETURNS ON EVERYTHING!",
+  "BUY NOW, PAY LATER ",
+  "FREE DELIVERY AND RETURNS!",
 ];
 
 class AnnouncementsMobile extends Component {

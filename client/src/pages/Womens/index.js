@@ -6,13 +6,20 @@ import Title from "../../components/Title";
 import ProductCard from "../../components/ProductCard";
 import LoadingSpinner from "../../components/LoadingSpinner";
 import { WOMENS_PRODUCTS } from "../../graphql/queries";
+import FilterAccordion from "../../components/FilterAccordion";
+import MobileFilters from "../../components/MobileFilters";
 
 const Womens = () => {
   const [filters, setFilters] = useState();
+  const [sortBy, setSortBy] = useState();
+  const [products, setProducts] = useState([]);
 
   const { data: womensProducts, loading, error } = useQuery(WOMENS_PRODUCTS, {
     variables: {
       womensProductsFilters: filters,
+    },
+    onCompleted: () => {
+      setProducts(productData);
     },
   });
 
@@ -25,6 +32,7 @@ const Womens = () => {
 
   if (womensProducts) {
     productData = womensProducts.womensProducts;
+
     cards = productData.map((product) => {
       return (
         <ProductCard
@@ -40,21 +48,25 @@ const Womens = () => {
     });
   }
 
-  const fetchBoots = () => {
-    setFilters({ style: "boots" });
-    console.log(filters);
+  const handleSetFilters = (event) => {
+    const key = event.target.getAttribute("data-key");
+    const value = event.target.getAttribute("data-value");
+
+    if (key && value) {
+      setFilters({ [key]: value });
+    } else {
+      setFilters(null);
+    }
   };
-  const fetchTrainers = () => {
-    setFilters({ style: "trainers" });
-  };
-  const fetchHighHeels = () => {
-    setFilters({ style: "heels" });
-  };
-  const fetchBootsSandals = () => {
-    setFilters({ style: "sandals" });
-  };
-  const fetchAll = () => {
-    setFilters(null);
+
+  const handleSort = (event) => {
+    const sortBy = event.target.getAttribute("data-sort");
+
+    if (sortBy === "highest") {
+      setSortBy("asc");
+    } else {
+      setSortBy("desc");
+    }
   };
 
   return (
@@ -66,28 +78,61 @@ const Womens = () => {
         you need to updated your wardrobe.
       </p>
       <div className="category-list text-center">
-        <button className="category-button" onClick={fetchBoots}>
+        <button
+          className="category-button"
+          data-key="style"
+          data-value="boots"
+          onClick={handleSetFilters}
+        >
           Boots
         </button>{" "}
-        |{" "}
-        <button className="category-button" onClick={fetchTrainers}>
+        |
+        <button
+          className="category-button"
+          data-key="style"
+          data-value="trainers"
+          onClick={handleSetFilters}
+        >
           Trainers
-        </button>{" "}
-        |{" "}
-        <button className="category-button" onClick={fetchHighHeels}>
+        </button>
+        |
+        <button
+          className="category-button"
+          data-key="style"
+          data-value="heels"
+          onClick={handleSetFilters}
+        >
           High Heels
         </button>{" "}
-        |{" "}
-        <button className="category-button" onClick={fetchBootsSandals}>
+        |
+        <button
+          className="category-button"
+          data-key="style"
+          data-value="sandals"
+          onClick={handleSetFilters}
+        >
           Sandals
         </button>{" "}
-        |{" "}
-        <button className="category-button" onClick={fetchAll}>
+        |
+        <button className="category-button" onClick={handleSetFilters}>
           All Shoes
         </button>
+        <MobileFilters
+          handleFilter={handleSetFilters}
+          handleSort={handleSort}
+        />
       </div>
-      {loading && <LoadingSpinner />}
-      {womensProducts && <div className="product-container">{cards}</div>}
+      <div className="products-body">
+        <div className="filters-div">
+          <div className="filters-header text-center">FILTERS</div>
+          <FilterAccordion
+            handleFilter={handleSetFilters}
+            handleSort={handleSort}
+          />
+        </div>
+        {womensProducts && <div className="product-container">{cards}</div>}
+        {loading && <LoadingSpinner />}
+      </div>
     </>
   );
 };

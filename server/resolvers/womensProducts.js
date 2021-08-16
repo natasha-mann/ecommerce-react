@@ -1,8 +1,6 @@
 const { Product } = require("../models");
 
 const womensProducts = async (_, { filters }) => {
-  // console.log(filters);
-
   const constructFilters = (filters) => {
     const array = Object.entries(filters);
 
