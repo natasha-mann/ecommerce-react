@@ -26,6 +26,7 @@
 
 .side-drawer ul {
   list-style: none;
+  text-decoration: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,11 +34,15 @@
 }
 
 .side-drawer li {
-  margin: 0.5rem 0;
+  margin: 0.5rem;
+  margin-right: 3rem;
+  padding-bottom: 1rem;
+  border-bottom: rgba(128, 128, 128, 0.678) 1px solid;
 }
 
 .side-drawer a {
   text-decoration: none;
+  color: black;
 }
 
 .side-drawer a:hover,

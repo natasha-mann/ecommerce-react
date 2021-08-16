@@ -2,8 +2,8 @@
   position: fixed;
   bottom: 40px;
   right: 40px;
-  background-color: var(--red);
-  color: #fff;
+  background-color: red;
+  color: white;
   height: 60px;
   width: 60px;
   border-radius: 50%;
