@@ -13,8 +13,16 @@
   height: 8rem;
 }
 
+.basket-image-container--large {
+  height: 10rem;
+}
+
 .basket-product-image {
   width: 7rem;
+}
+
+.basket-product-image--large {
+  width: 10rem;
 }
 
 .text-container {

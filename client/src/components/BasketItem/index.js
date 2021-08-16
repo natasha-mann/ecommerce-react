@@ -21,13 +21,15 @@ const product = {
   ],
 };
 
-const BasketItem = (props) => {
+const BasketItem = ({ size }) => {
   return (
     <div className="basket-item-container">
       <div className="basket-item">
-        <div className="basket-image-container ">
+        <div
+          className={`basket-image-container basket-image-container--${size}`}
+        >
           <img
-            className="basket-product-image "
+            className={`basket-product-image basket-product-image--${size}`}
             src={product.image}
             alt={product.name}
           />
