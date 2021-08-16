@@ -5,7 +5,8 @@ import { useBasketContext } from "../../contexts/BasketProvider";
 import "./BasketItem.css";
 
 const BasketItem = ({ product, size }) => {
-  const { removeItemFromBasket } = useBasketContext();
+  const { dispatch } = useBasketContext();
+
   return (
     <div className="basket-item-container">
       <div className="basket-item">
@@ -22,13 +23,16 @@ const BasketItem = ({ product, size }) => {
           <div className="header">{product.name}</div>
           <div className="item">£{product.price}</div>
           <div className="item">SIZE: {product.size} </div>
-          <div className="item">Qty: 1 </div>
+          <div className="item">Qty: {product.qty} </div>
 
           <div className="bin">
             <RiDeleteBin6Line
               fontSize="1.5em"
               onClick={() => {
-                removeItemFromBasket(product);
+                dispatch({
+                  type: "REMOVE_ITEM_FROM_BASKET",
+                  payload: { product },
+                });
               }}
             />
           </div>

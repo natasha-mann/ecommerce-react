@@ -1,79 +1,100 @@
-import React, { useState, createContext, useEffect, useContext } from "react";
+import React, { createContext, useContext, useReducer, useMemo } from "react";
 
 const BasketContext = createContext();
 const { Provider } = BasketContext;
 
-export const BasketProvider = ({ children }) => {
-  const getInitialCart = () => {
-    JSON.parse(localStorage.getItem("cart"));
-  };
-  const [cart, setCart] = useState([]);
-  const [showCart, setShowCart] = useState(false);
+const reducer = (state, action) => {
+  if (action.type === "ADD_ITEM_TO_BASKET") {
+    const itemInCart = state.cart.find(
+      (item) =>
+        item.id === action.payload.product.id &&
+        item.size === action.payload.product.size
+    );
+    let newCart;
+    if (itemInCart) {
+      newCart = state.cart.map((item) => {
+        if (
+          item.id === action.payload.product.id &&
+          item.size === action.payload.product.size
+        ) {
+          return {
+            ...item,
+            qty: item.qty + 1,
+          };
+        }
 
-  useEffect(() => {
-    const initialCart = getInitialCart();
-    if (initialCart) {
-      setCart(initialCart);
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }, [cart]);
-
-  const addItemToBasket = (product, qty = 1) => {
-    const item = cart.find((item) => {
-      if (item.id === product.id && item.size === product.size) {
-        return true;
-      }
-      return false;
-    });
-
-    if (item) {
-      item.qty += 1;
-      setCart([...cart]);
-      setShowCart(true);
-    } else {
-      setCart([
-        ...cart,
-        {
-          ...product,
-          qty,
-        },
-      ]);
-      setShowCart(true);
-    }
-  };
-
-  const removeItemFromBasket = (product) => {
-    console.log("removed", product);
-    const item = cart.find((item) => {
-      if (item.id === product.id && item.size === product.size) {
-        return true;
-      }
-      return false;
-    });
-
-    if (item) {
-      item.qty += 1;
-      setCart([...cart]);
-    } else {
-      const newCart = cart.filter((item) => {
-        return item.id !== product.id;
+        return item;
       });
-      setCart(newCart);
+    } else {
+      newCart = [
+        {
+          ...action.payload.product,
+          qty: 1,
+        },
+        ...state.cart,
+      ];
     }
+    localStorage.setItem("cart", JSON.stringify(newCart));
+    return { ...state, cart: newCart, showCart: true };
+  }
+
+  if (action.type === "REMOVE_ITEM_FROM_BASKET") {
+    const itemInCart = state.cart.find(
+      (item) =>
+        item.id === action.payload.product.id &&
+        item.size === action.payload.product.size
+    );
+
+    if (itemInCart) {
+      const newCart = state.cart
+        .map((item) => {
+          if (item.qty === 1) {
+            return;
+          }
+
+          if (
+            item.id === action.payload.product.id &&
+            item.size === action.payload.product.size &&
+            item.qty > 1
+          ) {
+            return {
+              ...item,
+              qty: item.qty - 1,
+            };
+          }
+
+          return item;
+        })
+        .filter((item) => item);
+
+      localStorage.setItem("cart", JSON.stringify(newCart));
+
+      return { ...state, cart: newCart, showCart: true };
+    } else {
+      return state;
+    }
+  }
+
+  if (action.type === "TOGGLE_CART") {
+    return { ...state, showCart: action.payload };
+  }
+
+  return state;
+};
+
+export const BasketProvider = ({ children }) => {
+  const initialState = {
+    cart: JSON.parse(localStorage.getItem("cart")) || [],
+    showCart: false,
   };
 
-  const basketValue = {
-    cart,
-    showCart,
-    setShowCart,
-    addItemToBasket,
-    removeItemFromBasket,
-  };
+  const [state, dispatch] = useReducer(reducer, initialState);
 
-  return <Provider value={basketValue}>{children}</Provider>;
+  const contextValue = useMemo(() => {
+    return { state, dispatch };
+  }, [state, dispatch]);
+
+  return <Provider value={contextValue}>{children}</Provider>;
 };
 
 export const useBasketContext = () => {

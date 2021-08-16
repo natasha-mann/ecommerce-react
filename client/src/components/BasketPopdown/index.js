@@ -8,22 +8,24 @@ import calculateSubtotal from "../../utils/calculateSubtotal";
 import "./BasketPopdown.css";
 
 const BasketPopdown = () => {
-  const { showCart, setShowCart } = useBasketContext();
+  const {
+    state: { showCart },
+    dispatch,
+  } = useBasketContext();
 
   const handleBasketVisibility = () => {
-    return setShowCart(false);
+    return dispatch({ type: "TOGGLE_CART", payload: false });
   };
 
   const displayCart = () => {
     if (showCart) {
-      console.log(showCart);
       return "open";
     } else {
       return "";
     }
   };
 
-  const products = JSON.parse(localStorage.getItem("cart"));
+  const products = JSON.parse(localStorage.getItem("cart")) || [];
 
   const renderBasket = () => {
     if (products.length) {

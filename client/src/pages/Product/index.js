@@ -18,8 +18,7 @@ import { useBasketContext } from "../../contexts/BasketProvider";
 
 const Product = () => {
   const { id } = useParams();
-  const { cart, addItemToBasket } = useBasketContext();
-  console.log(cart);
+  const { dispatch } = useBasketContext();
 
   const [productStock, setProductStock] = useState(1);
   const [selectedSize, setSelectedSize] = useState(null);
@@ -67,15 +66,20 @@ const Product = () => {
       event.preventDefault();
       if (selectedSize) {
         const product = productData.product;
-        const newShoe = {
-          id: product.id,
-          name: product.name,
-          color: product.color,
-          image: product.image,
-          size: selectedSize,
-          price: product.price,
-        };
-        addItemToBasket(newShoe);
+
+        dispatch({
+          type: "ADD_ITEM_TO_BASKET",
+          payload: {
+            product: {
+              id: product.id,
+              name: product.name,
+              color: product.color,
+              image: product.image,
+              size: selectedSize,
+              price: product.price,
+            },
+          },
+        });
       } else {
         setSizeError("Please select a size");
       }
