@@ -3,14 +3,27 @@ import Title from "../../components/Title";
 import "./Basket.css";
 
 const Basket = () => {
+  const products = JSON.parse(localStorage.getItem("cart"));
+
   return (
     <div>
       <Title text="MY BASKET" />
       <div className="basket-container">
         <div className="basket-detail-container">
-          <BasketItem size="large" />
-          <BasketItem size="large" />
-          <BasketItem size="large" />
+          {products &&
+            products.map((product) => (
+              <BasketItem
+                product={product}
+                key={`${product.id}-${product.size}`}
+                size="large"
+              />
+            ))}
+
+          {!products.length && (
+            <div className="empty-basket text-center">
+              You haven't added anything to your basket yet!
+            </div>
+          )}
         </div>
         <div className="basket-summary-container">
           <div className="basket-summary">
@@ -25,7 +38,7 @@ const Basket = () => {
             </div>
 
             <div className="confirm-button-div text-center">
-              <button className="confirm-button">Basket</button>
+              <button className="confirm-button">CHECKOUT</button>
             </div>
           </div>
         </div>

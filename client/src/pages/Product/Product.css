@@ -4,7 +4,8 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 0 2rem;
+  padding: 0rem 2rem;
+  margin-top: 3rem;
   margin-bottom: 3rem;
   box-sizing: border-box;
 }

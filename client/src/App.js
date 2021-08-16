@@ -7,11 +7,12 @@ import {
 } from "@apollo/client";
 import { isMobile } from "react-device-detect";
 
+import "./App.css";
+
+import { BasketProvider } from "./contexts/BasketProvider";
 import Routes from "./Routes";
 import NavigationElements from "./pages/NavigationElements/NavigationElements";
 import Footer from "./components/Footer";
-
-import "./App.css";
 import ChatWidget from "./components/ChatWidget";
 import Announcements from "./components/Announcements";
 import AnnouncementsMobile from "./components/AnnouncementsMobile";
@@ -27,24 +28,22 @@ const client = new ApolloClient({
 });
 
 function App() {
-  const handleBasketVisibility = () => {
-    return true;
-  };
-
   return (
     <ApolloProvider client={client}>
-      <Router>
-        <div style={{ height: "100%" }}>
-          <NavigationElements />
-          <BasketPopdown handleBasketVisibility={handleBasketVisibility} />
-          <main className="main-body">
-            {isMobile ? <AnnouncementsMobile /> : <Announcements />}
-            <Routes />
-          </main>
-          <ChatWidget />
-          <Footer />
-        </div>
-      </Router>
+      <BasketProvider>
+        <Router>
+          <div style={{ height: "100%" }}>
+            <NavigationElements />
+            <BasketPopdown />
+            <main className="main-body">
+              {isMobile ? <AnnouncementsMobile /> : <Announcements />}
+              <Routes />
+            </main>
+            <ChatWidget />
+            <Footer />
+          </div>
+        </Router>
+      </BasketProvider>
     </ApolloProvider>
   );
 }

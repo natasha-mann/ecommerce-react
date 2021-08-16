@@ -14,9 +14,12 @@ import { PRODUCT, PRODUCTS } from "../../graphql/queries";
 import CardsCarousel from "../../components/CardsCarousel";
 import ImageSlider from "../../components/ImageSlider";
 import fitFinderImage from "../../images/fit_finder.png";
+import { useBasketContext } from "../../contexts/BasketProvider";
 
 const Product = () => {
   const { id } = useParams();
+  const { cart, addItemToBasket } = useBasketContext();
+  console.log(cart);
 
   const [productStock, setProductStock] = useState(1);
   const [selectedSize, setSelectedSize] = useState(null);
@@ -61,11 +64,18 @@ const Product = () => {
 
   if (productData) {
     const handleAddToBasket = (event) => {
+      event.preventDefault();
       if (selectedSize) {
-        let newShoe = { ...productData };
-        newShoe.size = selectedSize;
-        // addToBasket(newShoe);
-        // handleSuccessModal();
+        const product = productData.product;
+        const newShoe = {
+          id: product.id,
+          name: product.name,
+          color: product.color,
+          image: product.image,
+          size: selectedSize,
+          price: product.price,
+        };
+        addItemToBasket(newShoe);
       } else {
         setSizeError("Please select a size");
       }
@@ -191,11 +201,7 @@ const Product = () => {
                   <div className="stock-info">
                     Only {productStock} remaining in stock!
                   </div>
-                  <button
-                    className="cart-button"
-                    type="submit"
-                    onClick={handleAddToBasket}
-                  >
+                  <button className="cart-button" onClick={handleAddToBasket}>
                     ADD TO CART
                   </button>
                 </>
