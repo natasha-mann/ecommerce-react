@@ -34,7 +34,11 @@ const BasketPopdown = () => {
     return (
       <div className="popdown-title">
         My Basket | {numberOfItems}{" "}
-        {numberOfItems > 1 ? <span>Items</span> : <span>Item</span>}
+        {numberOfItems > 1 || numberOfItems === 0 ? (
+          <span>Items</span>
+        ) : (
+          <span>Item</span>
+        )}
       </div>
     );
   };

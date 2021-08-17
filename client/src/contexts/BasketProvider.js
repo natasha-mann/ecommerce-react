@@ -38,35 +38,41 @@ const reducer = (state, action) => {
     return { ...state, cart: newCart, showCart: true };
   }
 
+  if (action.type === "LOAD_SAVED_BASKET") {
+    const newCart = action.payload.products;
+    return { ...state, cart: newCart, showCart: false };
+  }
+
   if (action.type === "REMOVE_ITEM_FROM_BASKET") {
-    const itemInCart = state.cart.find(
-      (item) =>
-        item.id === action.payload.product.id &&
-        item.size === action.payload.product.size
-    );
+    const itemInCart = action.payload.product;
 
     if (itemInCart) {
-      const newCart = state.cart
-        .map((item) => {
-          if (item.qty === 1) {
-            return;
-          }
+      if (itemInCart.qty - 1 === 0) {
+        const cartItemIndex = state.cart.findIndex(
+          (item) => item.id === itemInCart.id && item.size === itemInCart.size
+        );
 
-          if (
-            item.id === action.payload.product.id &&
-            item.size === action.payload.product.size &&
-            item.qty > 1
-          ) {
-            console.log("payload", action.payload.product);
-            return {
-              ...item,
-              qty: item.qty - 1,
-            };
-          }
+        const newCart = state.cart.filter(
+          (item, index) => index !== cartItemIndex
+        );
 
-          return item;
-        })
-        .filter((item) => item);
+        localStorage.setItem("cart", JSON.stringify(newCart));
+        return { ...state, cart: newCart, showCart: true };
+      }
+
+      const newCart = state.cart.map((item) => {
+        if (
+          item.id === action.payload.product.id &&
+          item.size === action.payload.product.size
+        ) {
+          return {
+            ...item,
+            qty: item.qty - 1,
+          };
+        }
+
+        return item;
+      });
 
       localStorage.setItem("cart", JSON.stringify(newCart));
 

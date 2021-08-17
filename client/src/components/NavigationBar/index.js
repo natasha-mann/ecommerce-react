@@ -56,13 +56,13 @@ const NavigationBar = (props) => {
                 </a>
               </div>
               <div>
-                <button
+                <a
                   className="nav-basket-icon"
                   href="/basket"
                   onMouseEnter={handleOnMouseEnter}
                 >
                   <BiShoppingBag color="black" fontSize="1.5em" />
-                </button>
+                </a>
               </div>
             </div>
           </div>

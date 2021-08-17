@@ -4,7 +4,7 @@ const calculateSubtotal = (products) => {
       return (acc += product.price * product.qty);
     }, 0);
 
-    return subtotal;
+    return subtotal.toFixed(2);
   } else {
     return "0.00";
   }

@@ -1,13 +1,28 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BasketItem from "../../components/BasketItem";
 import Title from "../../components/Title";
+import { useBasketContext } from "../../contexts/BasketProvider";
 import calculateSubtotal from "../../utils/calculateSubtotal";
 import "./Basket.css";
 
 const Basket = () => {
   const [isValidDiscount, setIsValidDiscount] = useState(null);
   const [discountedTotal, setDiscountedTotal] = useState();
-  const products = JSON.parse(localStorage.getItem("cart")) || [];
+
+  const { state, dispatch } = useBasketContext();
+  const products = state.cart;
+
+  useEffect(() => {
+    if (!products.length) {
+      const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
+      if (savedCart.length) {
+        dispatch({
+          type: "LOAD_SAVED_BASKET",
+          payload: { products: savedCart },
+        });
+      }
+    }
+  }, [products.length, dispatch]);
 
   const renderBasket = () => {
     const subtotal = calculateSubtotal(products);
@@ -17,14 +32,14 @@ const Basket = () => {
 
       if (event.currentTarget.discount.value === "NEW15") {
         const discountedSubtotal = (subtotal / 100) * 85;
-        setDiscountedTotal(discountedSubtotal);
+        setDiscountedTotal(discountedSubtotal.toFixed(2));
         setIsValidDiscount(true);
       } else if (event.currentTarget.discount.value === "NEW20") {
         const discountedSubtotal = (subtotal / 100) * 80;
-        setDiscountedTotal(discountedSubtotal);
+        setDiscountedTotal(discountedSubtotal.toFixed(2));
         setIsValidDiscount(true);
       } else {
-        setDiscountedTotal(subtotal);
+        setDiscountedTotal(subtotal.toFixed(2));
         setIsValidDiscount(false);
         return <div>Total: £ {subtotal}</div>;
       }
@@ -86,7 +101,7 @@ const Basket = () => {
       );
     } else {
       return (
-        <div className="empty-basket text-center">
+        <div className="empty-basket empty-basket-page text-center">
           You haven't added anything to your basket yet!
         </div>
       );

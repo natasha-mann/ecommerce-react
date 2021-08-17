@@ -11,8 +11,8 @@ import MobileFilters from "../../components/MobileFilters";
 
 const Womens = () => {
   const [filters, setFilters] = useState();
-  const [sortBy, setSortBy] = useState();
-  const [products, setProducts] = useState([]);
+  const [, setSortBy] = useState();
+  const [, setProducts] = useState([]);
 
   const { data: womensProducts, loading, error } = useQuery(WOMENS_PRODUCTS, {
     variables: {
@@ -22,10 +22,6 @@ const Womens = () => {
       setProducts(productData);
     },
   });
-
-  if (error) {
-    return <div>error...</div>;
-  }
 
   let productData;
   let cards;
@@ -51,7 +47,7 @@ const Womens = () => {
   const handleSetFilters = (event) => {
     const key = event.target.getAttribute("data-key");
     const value = event.target.getAttribute("data-value");
-    console.log({ [key]: value });
+
     if (key && value) {
       setFilters({ [key]: value });
     } else {
@@ -131,7 +127,18 @@ const Womens = () => {
           />
         </div>
         {womensProducts && <div className="product-container">{cards}</div>}
-        {loading && <LoadingSpinner />}
+        {loading && (
+          <div className="product-container">
+            <LoadingSpinner />
+          </div>
+        )}
+        {error && (
+          <div className="product-container">
+            <div className="data-error text-center">
+              Oops there seems to be a problem! Try again later!
+            </div>
+          </div>
+        )}
       </div>
     </>
   );

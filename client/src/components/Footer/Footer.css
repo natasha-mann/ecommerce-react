@@ -14,13 +14,13 @@
   justify-content: space-between;
 }
 
-.tables-container .table-item {
+.table-item {
   flex: 0 1 50%;
   list-style: none;
   padding-left: 0;
 }
 
-.tables-container .table-item li {
+.table-item li {
   padding: 5px 0;
   font-size: 18px;
 }
@@ -76,7 +76,7 @@
 
 @media only screen and (max-width: 900px) {
   .tables-container {
-    flex: 0 1 60%;
+    flex: 0 0 60%;
   }
   .newsletter-container {
     flex: 0 1 40%;
@@ -86,12 +86,21 @@
 @media only screen and (max-width: 767px) {
   .footer-container-inner {
     flex-direction: column;
-    padding: 20px;
+    padding: 1.5rem 3rem;
   }
   .newsletter-container {
     padding-top: 30px;
   }
   .footer-container .payment-icons img {
     width: 80%;
+  }
+
+  .list-title {
+    font-size: 1.3rem;
+  }
+
+  .help-div,
+  .about-div {
+    margin: 0 1.5rem;
   }
 }

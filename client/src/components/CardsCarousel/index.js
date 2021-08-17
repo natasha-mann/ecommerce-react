@@ -1,5 +1,7 @@
 import Carousel from "react-multi-carousel";
+import { isMobile } from "react-device-detect";
 import "react-multi-carousel/lib/styles.css";
+
 import ProductCard from "../ProductCard";
 
 const responsive = {
@@ -58,8 +60,8 @@ const CardsCarousel = (props) => {
       responsive={responsive}
       removeArrowOnDeviceType={["tablet", "mobile"]}
       deviceType={props.deviceType}
-      autoPlay={props.deviceType === "mobile" ? true : false}
-      autoPlaySpeed={2000}
+      autoPlay={isMobile ? true : false}
+      autoPlaySpeed={3000}
     >
       {cards}
     </Carousel>

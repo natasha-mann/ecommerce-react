@@ -8,10 +8,14 @@ const SideDrawer = ({ show, setShow }) => {
     drawerClasses = "side-drawer open";
   }
 
+  const handleClick = () => {
+    return setShow(false);
+  };
+
   return (
     <nav className={drawerClasses}>
       <button className="side-drawer-close">
-        <AiOutlineClose fontSize="2em" />
+        <AiOutlineClose fontSize="2em" onClick={handleClick} />
       </button>
       <ul>
         <li>

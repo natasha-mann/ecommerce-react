@@ -7,17 +7,26 @@ import ProductCard from "../../components/ProductCard";
 import { PRODUCTS } from "../../graphql/queries";
 import RegisterModal from "../../components/RegisterModal";
 import { useState } from "react";
+import LoadingSpinner from "../../components/LoadingSpinner";
 
 const Home = () => {
   const [modalShow, setModalShow] = useState(true);
   const { data, loading, error } = useQuery(PRODUCTS);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="mx-auto pb-5">
+        <LoadingSpinner />
+      </div>
+    );
   }
 
   if (error) {
-    return <div>error...</div>;
+    return (
+      <div className="data-error text-center mx-auto">
+        Oops there seems to be a problem! Try again later!
+      </div>
+    );
   }
 
   if (data) {

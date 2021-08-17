@@ -6,7 +6,7 @@ const Footer = () => {
     <div className="footer-container">
       <div className="footer-container-inner">
         <div className="tables-container">
-          <div>
+          <div className="help-div">
             <div className="list-title">HELP AND INFO</div>
             <ul className="table-item mt-3">
               <li>Contact Us</li>
@@ -17,7 +17,7 @@ const Footer = () => {
               <li>FAQs</li>
             </ul>
           </div>
-          <div>
+          <div className="about-div">
             <div className="list-title">ABOUT GOLDEN SHOE</div>
             <ul className="table-item mt-3">
               <li>About Us</li>

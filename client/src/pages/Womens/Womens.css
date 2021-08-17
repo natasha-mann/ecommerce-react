@@ -21,6 +21,16 @@
   flex-wrap: wrap;
 }
 
+.data-error {
+  background-color: #eeeeee;
+  width: 50%;
+  border-radius: 5%;
+  height: 5rem;
+  margin: 3rem 1rem;
+  padding: 1.5rem 0;
+  font-weight: bold;
+}
+
 .category-button {
   background-color: transparent;
   border: none;
@@ -54,11 +64,11 @@
   }
 
   .product-container {
-    padding: 0rem 4rem;
+    padding: 0rem 0rem;
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .mobile-filters-div {
     display: none;
   }
