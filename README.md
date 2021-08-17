@@ -13,7 +13,7 @@
 
 This project is a case study for AND Digital.
 
-I was tasked with redesigning a fiction footwear retailer's website, to solve a variety of challenges and provide solutions for problem areas.
+I was tasked with redesigning a fictional footwear retailer's website, to solve a variety of challenges and provide solutions for problem areas.
 
 The app was built with a React front end, MongoDB database, and an Apollo server with GraphQL queries and mutations to fetch and modify data.
 
