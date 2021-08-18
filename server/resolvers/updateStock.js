@@ -14,7 +14,7 @@ const updateStock = async (_, { input }) => {
 
       const currentStock = currentSize.stock;
       let newQuantity;
-      console.log(currentStock);
+
       if (currentStock > 0) {
         newQuantity = currentStock - product.qty;
       } else {
