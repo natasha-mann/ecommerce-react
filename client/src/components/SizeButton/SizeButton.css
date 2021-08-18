@@ -14,3 +14,18 @@
   background-color: #212a2f;
   color: white;
 }
+
+@media screen and (max-width: 415px) {
+  .size-button {
+    width: 2.5rem;
+    height: 2.8rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .size-button {
+    width: 2.3rem;
+    height: 3rem;
+    margin: 0 0.1rem;
+  }
+}

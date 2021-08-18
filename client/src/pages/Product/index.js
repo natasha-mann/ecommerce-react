@@ -150,6 +150,24 @@ const Product = () => {
       <div className="product-container">
         {productInfo && (
           <>
+            <div className="mobile-display">
+              {" "}
+              <Title text={productInfo.name} />
+              <div className="text-center product-styles">
+                {styles.join(" | ")}
+              </div>
+              <div className="mt-3 text-center product-price">
+                £{productInfo.price}
+              </div>
+              <div className="icons-container text-center mt-3">
+                <AiFillStar className="icons" />
+                <AiFillStar className="icons" />
+                <AiFillStar className="icons" />
+                <AiFillStar className="icons" />
+                <AiFillStar className="icons" />
+                <p>Out of 38 reviews</p>
+              </div>
+            </div>
             <div className="product-image-container">
               <ImageSlider
                 items={productImages}
@@ -163,20 +181,23 @@ const Product = () => {
               </div>
             </div>
             <div className="product-info-container">
-              <Title text={productInfo.name} />
-              <div className="text-center product-styles">
-                {styles.join(" | ")}
-              </div>
-              <div className="mt-3 text-center product-price">
-                £{productInfo.price}
-              </div>
-              <div className="icons-container text-center mt-3">
-                <AiFillStar className="icon" />
-                <AiFillStar className="icon" />
-                <AiFillStar className="icon" />
-                <AiFillStar className="icon" />
-                <AiFillStar className="icon" />
-                <p>Out of 38 reviews</p>
+              <div className="desktop-display">
+                {" "}
+                <Title text={productInfo.name} />
+                <div className="text-center product-styles">
+                  {styles.join(" | ")}
+                </div>
+                <div className="mt-3 text-center product-price">
+                  £{productInfo.price}
+                </div>
+                <div className="icons-container text-center mt-3">
+                  <AiFillStar className="icons" />
+                  <AiFillStar className="icons" />
+                  <AiFillStar className="icons" />
+                  <AiFillStar className="icons" />
+                  <AiFillStar className="icons" />
+                  <p>Out of 38 reviews</p>
+                </div>
               </div>
 
               <form>

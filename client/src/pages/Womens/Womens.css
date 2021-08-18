@@ -31,6 +31,16 @@
   font-weight: bold;
 }
 
+.no-results {
+  background-color: #eeeeee;
+  width: 50vw;
+  border-radius: 5%;
+  height: 5rem;
+  margin: 3rem 1rem;
+  padding: 1.5rem 0;
+  font-weight: bold;
+}
+
 .category-button {
   background-color: transparent;
   border: none;
@@ -62,6 +72,9 @@
   .filters-div {
     min-width: 20%;
   }
+  .product-container {
+    padding: 0rem 1rem;
+  }
 }
 
 @media screen and (max-width: 912px) {
@@ -70,9 +83,6 @@
   }
   .products-body {
     margin: 0rem 1rem;
-  }
-  .product-container {
-    padding: 0rem 1rem;
   }
 }
 
@@ -86,6 +96,7 @@
   }
   .products-body {
     padding: 3rem 0rem;
+    justify-content: center;
   }
 }
 

@@ -68,7 +68,7 @@ const Womens = () => {
   return (
     <>
       <Title text="WOMENS" />
-      <p className="text-center">
+      <p className="text-center mx-2">
         Up your shoe game this season with women’s shoes that meet all your
         needs. From heels, to boots, to sandals and trainers, we have everything
         you need to updated your wardrobe.
@@ -126,7 +126,14 @@ const Womens = () => {
             handleSort={handleSort}
           />
         </div>
-        {womensProducts && <div className="product-container">{cards}</div>}
+        {womensProducts && (
+          <div className="product-container">
+            {cards}
+            {!cards.length && (
+              <div className="no-results text-center">No results!</div>
+            )}
+          </div>
+        )}
         {loading && (
           <div className="product-container">
             <LoadingSpinner />

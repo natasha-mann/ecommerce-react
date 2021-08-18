@@ -99,3 +99,18 @@
   color: white;
   font-weight: bold;
 }
+
+@media screen and (max-width: 1072px) {
+  .desktop-display {
+    display: none;
+  }
+  .mobile-display {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1073px) {
+  .mobile-display {
+    display: none;
+  }
+}
