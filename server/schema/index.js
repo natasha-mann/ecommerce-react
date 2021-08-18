@@ -4,6 +4,7 @@ const typeDefs = gql`
   type Size {
     size: Int!
     stock: Int!
+    id: ID
   }
 
   type Product {
@@ -34,10 +35,25 @@ const typeDefs = gql`
     desc
   }
 
+  input stockInput {
+    id: ID
+    size: Int
+    qty: Int!
+    color: String
+    sizeId: ID!
+    image: String
+    name: String
+    price: Int
+  }
+
   type Query {
     products(sortBy: String, top: Int, filters: Filter): [Product]
     womensProducts(filters: Filter, orderBy: PriceOrder): [Product]
     product(id: ID!): Product
+  }
+
+  type Mutation {
+    updateStock(input: [stockInput!]): [Product!]
   }
 `;
 

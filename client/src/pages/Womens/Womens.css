@@ -58,6 +58,24 @@
   align-content: center;
 }
 
+@media screen and (max-width: 1300px) {
+  .filters-div {
+    min-width: 20%;
+  }
+}
+
+@media screen and (max-width: 912px) {
+  .filters-div {
+    min-width: 20%;
+  }
+  .products-body {
+    margin: 0rem 1rem;
+  }
+  .product-container {
+    padding: 0rem 1rem;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .filters-div {
     display: none;
@@ -65,6 +83,9 @@
 
   .product-container {
     padding: 0rem 0rem;
+  }
+  .products-body {
+    padding: 3rem 0rem;
   }
 }
 

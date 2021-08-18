@@ -1,6 +1,6 @@
 import "./SizeButton.css";
 
-const SizeButton = ({ size, onClick, stock, activeButton }) => {
+const SizeButton = ({ size, onClick, stock, activeButton, sizeId }) => {
   return (
     <button
       id={size}
@@ -8,6 +8,7 @@ const SizeButton = ({ size, onClick, stock, activeButton }) => {
       className={`size-button ${activeButton === size ? "active-color" : ""}`}
       onClick={onClick}
       data-stock={stock}
+      data-sizeid={sizeId}
     >
       {size}
     </button>

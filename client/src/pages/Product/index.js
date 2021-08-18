@@ -23,6 +23,8 @@ const Product = () => {
 
   const [productStock, setProductStock] = useState(1);
   const [selectedSize, setSelectedSize] = useState(null);
+  const [selectedSizeId, setSelectedSizeId] = useState(null);
+
   const [sizeError, setSizeError] = useState("");
   const [activeButton, setActiveButton] = useState();
 
@@ -61,6 +63,7 @@ const Product = () => {
             image: product.image,
             size: selectedSize,
             price: product.price,
+            sizeId: selectedSizeId,
           },
         },
       });
@@ -72,9 +75,11 @@ const Product = () => {
   const handleSizeClick = (event) => {
     const stockNumber = parseInt(event.target.getAttribute("data-stock"));
     const size = parseInt(event.target.innerHTML);
+    const sizeId = event.target.getAttribute("data-sizeid");
 
     setProductStock(stockNumber);
     setSelectedSize(size);
+    setSelectedSizeId(sizeId);
     setSizeError("");
     setActiveButton(parseInt(event.target.id));
   };
@@ -96,6 +101,7 @@ const Product = () => {
         <SizeButton
           key={size.size}
           size={size.size}
+          sizeId={size.id}
           stock={size.stock}
           onClick={handleSizeClick}
           activeButton={activeButton}

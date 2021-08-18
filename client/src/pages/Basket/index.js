@@ -1,11 +1,15 @@
+import { useMutation } from "@apollo/client";
 import { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import BasketItem from "../../components/BasketItem";
 import Title from "../../components/Title";
 import { useBasketContext } from "../../contexts/BasketProvider";
+import { UPDATE_PRODUCTS } from "../../graphql/queries";
 import calculateSubtotal from "../../utils/calculateSubtotal";
 import "./Basket.css";
 
 const Basket = () => {
+  let history = useHistory();
   const [isValidDiscount, setIsValidDiscount] = useState(null);
   const [discountedTotal, setDiscountedTotal] = useState();
 
@@ -24,7 +28,31 @@ const Basket = () => {
     }
   }, [products.length, dispatch]);
 
+  const [checkout] = useMutation(UPDATE_PRODUCTS, {
+    onCompleted: (data) => {
+      history.push("/success");
+    },
+    onError: (error) => {
+      console.log(error);
+    },
+  });
+
   const renderBasket = () => {
+    const handleCheckout = async () => {
+      const input = products.map((product) => {
+        return {
+          sizeId: product.sizeId,
+          qty: product.qty,
+          id: product.id,
+        };
+      });
+      await checkout({
+        variables: {
+          updateStockInput: input,
+        },
+      });
+    };
+
     const subtotal = calculateSubtotal(products);
 
     const handleApplyDiscount = (event) => {
@@ -93,7 +121,9 @@ const Basket = () => {
               </form>
 
               <div className="confirm-button-div text-center">
-                <button className="confirm-button">CHECKOUT</button>
+                <button className="confirm-button" onClick={handleCheckout}>
+                  CHECKOUT
+                </button>
               </div>
             </div>
           </div>

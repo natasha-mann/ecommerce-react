@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Product from "./pages/Product";
 import Womens from "./pages/Womens";
 import Basket from "./pages/Basket";
+import Success from "./pages/Success";
 
 const Routes = () => {
   return (
@@ -22,6 +23,9 @@ const Routes = () => {
       </Route>
       <Route exact path="/checkout">
         {/* <Checkout /> */}
+      </Route>
+      <Route exact path="/success">
+        <Success />
       </Route>
     </Switch>
   );

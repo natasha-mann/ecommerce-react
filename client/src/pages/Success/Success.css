@@ -1,0 +1,19 @@
+.success-main {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+}
+
+.success-div {
+  background-color: #eeeeee;
+  width: 80%;
+  height: 10rem;
+  margin-top: 3rem;
+  padding: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .success-div {
+    height: 12rem;
+  }
+}

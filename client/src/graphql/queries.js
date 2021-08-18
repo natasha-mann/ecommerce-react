@@ -13,6 +13,7 @@ export const PRODUCTS = gql`
       sizes {
         size
         stock
+        id
       }
     }
   }
@@ -31,6 +32,7 @@ export const PRODUCT = gql`
       sizes {
         stock
         size
+        id
       }
     }
   }
@@ -56,6 +58,20 @@ export const WOMENS_PRODUCTS = gql`
       sizes {
         stock
         size
+      }
+    }
+  }
+`;
+
+export const UPDATE_PRODUCTS = gql`
+  mutation Mutation($updateStockInput: [stockInput!]) {
+    updateStock(input: $updateStockInput) {
+      id
+      name
+      sizes {
+        size
+        stock
+        id
       }
     }
   }
