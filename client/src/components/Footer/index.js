@@ -38,7 +38,7 @@ const Footer = () => {
               type="email"
               placeholder="Enter your email"
             />
-            <button type="submit">Sign Me Up!</button>
+            <button type="submit" className="footer-button">Sign Me Up!</button>
           </div>
         </div>
       </div>
