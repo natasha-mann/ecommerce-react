@@ -72,6 +72,9 @@ const FilterAccordion = ({ handleFilter, handleSort }) => {
             <li data-key="color" data-value="white" onClick={handleFilter}>
               White
             </li>
+            <li data-key="color" data-value="grey" onClick={handleFilter}>
+              Grey
+            </li>
             <li data-key="color" data-value="multi" onClick={handleFilter}>
               Multi
             </li>

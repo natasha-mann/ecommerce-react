@@ -59,6 +59,14 @@ const MobileFilters = ({ handleFilter, handleSort }) => {
           >
             White
           </Dropdown.Item>
+          <Dropdown.Item
+            as="button"
+            data-key="color"
+            data-value="grey"
+            onClick={handleFilter}
+          >
+            Grey
+          </Dropdown.Item>
 
           <Dropdown.Item as="button" onClick={handleFilter}>
             All

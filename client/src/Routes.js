@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
 import Womens from "./pages/Womens";
+import Mens from "./pages/Mens";
 import Basket from "./pages/Basket";
 import Success from "./pages/Success";
 
@@ -14,6 +15,9 @@ const Routes = () => {
       </Route>
       <Route exact path="/womens">
         <Womens />
+      </Route>
+      <Route exact path="/mens">
+        <Mens />
       </Route>
       <Route exact path="/product/:id">
         <Product />

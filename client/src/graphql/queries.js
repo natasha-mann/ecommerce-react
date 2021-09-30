@@ -63,6 +63,26 @@ export const WOMENS_PRODUCTS = gql`
   }
 `;
 
+export const MENS_PRODUCTS = gql`
+  query Query($mensProductsFilters: Filter, $mensProductsOrderBy: PriceOrder) {
+    mensProducts(filters: $mensProductsFilters, orderBy: $mensProductsOrderBy) {
+      id
+      type
+      name
+      style
+      color
+      image
+      sizes {
+        size
+        stock
+        id
+      }
+      price
+      brand
+    }
+  }
+`;
+
 export const UPDATE_PRODUCTS = gql`
   mutation Mutation($updateStockInput: [stockInput!]) {
     updateStock(input: $updateStockInput) {

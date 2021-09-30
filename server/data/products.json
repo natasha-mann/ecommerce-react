@@ -182,7 +182,7 @@
   {
     "type": "men",
     "name": "Classic Tan Brogues",
-    "style": ["brogue", "formal", "flat"],
+    "style": ["brogues", "formal", "flat"],
     "color": "brown",
     "image": "https://images.unsplash.com/photo-1620554740172-7c02a78b239d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80",
     "price": 29.99,
@@ -326,7 +326,7 @@
   {
     "type": "men",
     "name": "Classic Tan Loafers",
-    "style": ["loafer", "leather", "formal"],
+    "style": ["loafers", "leather", "formal"],
     "color": "brown",
     "image": "https://images.unsplash.com/photo-1616406432452-07bc5938759d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80",
     "price": 39.99,

@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/natasha-mann/golden-shoe/issues"
   },
-  "homepage": "https://github.com/natasha-mann/golden-shoe#readme"
+  "homepage": "https://github.com/natasha-mann/golden-shoe#readme",
+  "dependencies": {
+    "concurrently": "^6.2.2"
+  }
 }

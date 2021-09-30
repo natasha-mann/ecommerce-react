@@ -1,6 +1,7 @@
 const products = require("./products");
 const product = require("./product");
 const womensProducts = require("./womensProducts");
+const mensProducts = require("./mensProducts");
 const updateStock = require("./updateStock");
 
 const resolvers = {
@@ -8,6 +9,7 @@ const resolvers = {
     products,
     product,
     womensProducts,
+    mensProducts,
   },
   Mutation: {
     updateStock,
