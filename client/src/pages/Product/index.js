@@ -21,7 +21,7 @@ const Product = () => {
   const { id } = useParams();
   const { dispatch } = useBasketContext();
 
-  const [productStock, setProductStock] = useState(1);
+  const [productStock, setProductStock] = useState(null);
   const [selectedSize, setSelectedSize] = useState(null);
   const [selectedSizeId, setSelectedSizeId] = useState(null);
 
